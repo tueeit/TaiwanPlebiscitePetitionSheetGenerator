@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>公投連署書</title>
+    <meta charset="UTF-8">
+    <style>
+        input.name, input.id { width: 100px; }
+        input.birthday, input.address { width: 80px; }
+        div.table { display: table; }
+        div.tr { display: table-row; }
+        div.label { display: table-cell; width: 100px; }
+        div.input { display: table-cell; width: 500px; }
+    </style>
+</head>
+<body>
+    <div class="table">
+        <div class="tr">
+            <div class="label">
+                <label>姓名</label>
+            </div>
+            <div class="input">
+                <input class="name" type="text" name="name" id="name" placeholder="姓名">
+            </div>
+        </div>
+        <div class="tr">
+            <div class="label">
+                <label>身份證字號</label>
+            </div>
+            <div class="input">
+                <input class="id" type="text" name="id" id="id" placeholder="身份證字號">
+            </div>
+        </div>
+        <div class="tr">
+            <div class="label">
+                <label>生日</label>
+            </div>
+            <div class="input">
+                <input class="birthday" type="text" name="year" id="year" placeholder="西元年">-
+                <input class="birthday" type="text" name="month" id="month" placeholder="月">-
+                <input class="birthday" type="text" name="date" id="date" placeholder="日">
+            </div>
+        </div>
+        <div class="tr">
+            <div class="label">
+                <label>地址</label>
+            </div>
+            <div class="input">
+                <input class="address" type="text" name="county" id="county" placeholder="縣/市">&nbsp;
+                <input class="address" type="text" name="district" id="district" placeholder="鄉/鎮/市/區">&nbsp;
+                <input class="address" type="text" name="villiage" id="villiage" placeholder="村/里">
+                <br />
+                <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰">鄰&nbsp;
+                <input class="address" type="text" name="road" id="road" placeholder="路/街">&nbsp;
+                <input class="address" type="text" name="section" id="section" placeholder="段">段
+                <br />
+                <input class="address" type="text" name="lane" id="lane" placeholder="巷">巷&nbsp;
+                <input class="address" type="text" name="alley" id="alley" placeholder="弄">弄&nbsp;
+                <input class="address" type="text" name="number" id="number" placeholder="號">號
+                <br />
+                <input class="address" type="text" name="floor" id="floor" placeholder="樓">樓之&nbsp;
+                <input class="address" type="text" name="part" id="part" placeholder="">
+            </div>
+        </div>
+    </div>
+</body>
