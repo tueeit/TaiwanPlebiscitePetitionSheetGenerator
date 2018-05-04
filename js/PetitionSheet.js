@@ -14,7 +14,6 @@ function create_data_binding() {
     copy_input_to_span("year")
     copy_input_to_span("month")
     copy_input_to_span("date")
-    copy_input_to_span("villiage")
     copy_input_to_span("neighbor")
     copy_input_to_span("road")
     copy_input_to_span("section")
@@ -109,6 +108,26 @@ function create_data_binding() {
             $("div.district_2_circle").hide();
             $("div.district_3_circle").hide();
             $("div.district_4_circle").hide();
+        }
+    })
+
+    $("input#villiage").keyup(function() {
+        villiage = $(this).val();
+        villiage_name = villiage.substring(0, villiage.length - 1);
+        villiage_type = villiage.substring(villiage.length - 1, villiage.length);
+
+        if (villiage_type == '村') {
+            $("span#villiage").text(villiage_name);
+            $("div.villiage_1_circle").show();
+            $("div.villiage_2_circle").hide();
+        } else if (villiage_type == '里') {
+            $("span#villiage").text(villiage_name);
+            $("div.villiage_1_circle").hide();
+            $("div.villiage_2_circle").show();
+        } else {
+            $("span#villiage").text(villiage);
+            $("div.villiage_1_circle").hide();
+            $("div.villiage_2_circle").hide();
         }
     })
 }
