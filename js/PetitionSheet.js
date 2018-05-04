@@ -15,7 +15,6 @@ function create_data_binding() {
     copy_input_to_span("month")
     copy_input_to_span("date")
     copy_input_to_span("neighbor")
-    copy_input_to_span("road")
     copy_input_to_span("section")
     copy_input_to_span("lane")
     copy_input_to_span("alley")
@@ -128,6 +127,26 @@ function create_data_binding() {
             $("span#villiage").text(villiage);
             $("div.villiage_1_circle").hide();
             $("div.villiage_2_circle").hide();
+        }
+    })
+
+    $("input#road").keyup(function() {
+        road = $(this).val();
+        road_name = road.substring(0, road.length - 1);
+        road_type = road.substring(road.length - 1, road.length);
+
+        if (road_type == '路') {
+            $("span#road").text(road_name);
+            $("div.road_1_circle").show();
+            $("div.road_2_circle").hide();
+        } else if (road_type == '街') {
+            $("span#road").text(road_name);
+            $("div.road_1_circle").hide();
+            $("div.road_2_circle").show();
+        } else {
+            $("span#road").text(road);
+            $("div.road_1_circle").hide();
+            $("div.road_2_circle").hide();
         }
     })
 }
