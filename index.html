@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="css/PetitionForm.css">
     <link rel="stylesheet" type="text/css" href="topic/InitiativeNationalHolidayLaw/PetitionSheet.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="js/PetitionSheet.js"></script>
 </head>
 <body>
@@ -62,7 +64,7 @@
     <hr>
     <h3>連署書預覽</h3>
 
-    <div class="sheet">
+    <div class="sheet" id="sheet">
         <div class="id"><span id="id"></span></div>
         <div class="year"><span id="year"></span></div>
         <div class="month"><span id="month"></span></div>
@@ -92,4 +94,6 @@
         <div class="floor"><span id="floor"></div>
         <div class="part"><span id="part"></span></div>
     </div>
+
+    <button id="export_pdf">輸出PDF</button>
 </body>
