@@ -17,3 +17,7 @@ div.alley, div.number, div.floor, div.part {
 div.id, div.year, div.month, div.date {
     font-family: "Lucida Console";
 }
+
+div.circle {
+    display: none;
+}
