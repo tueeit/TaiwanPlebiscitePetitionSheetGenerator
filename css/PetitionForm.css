@@ -1,0 +1,25 @@
+input.name, input.id {
+    width: 100px;
+}
+
+input.birthday, input.address {
+    width: 80px;
+}
+
+div.table {
+    display: table;
+}
+
+div.tr {
+    display: table-row;
+}
+
+div.label {
+    display: table-cell;
+    width: 100px;
+}
+
+div.input {
+    display: table-cell;
+    width: 500px;
+}
