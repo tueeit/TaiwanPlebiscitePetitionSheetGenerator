@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="js/tw-city-selector.min.js"></script>
     <script src="js/PetitionSheet.js"></script>
 </head>
 <body>
@@ -42,9 +43,9 @@
             <div class="label">
                 <label>地址</label>
             </div>
-            <div class="input">
-                <input class="address" type="text" name="county" id="county" placeholder="縣/市">&nbsp;
-                <input class="address" type="text" name="district" id="district" placeholder="鄉/鎮/市/區">&nbsp;
+            <div class="input" id="address">
+                <select class="county" id="county"></select>&nbsp;
+                <select class="district" id="district"></select>&nbsp;
                 <input class="address" type="text" name="villiage" id="villiage" placeholder="村/里">
                 <br />
                 <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰">鄰&nbsp;

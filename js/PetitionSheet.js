@@ -27,6 +27,13 @@ function create_data_binding() {
     copy_input_to_span("part")
 
     $("button#export_pdf").click(export_pdf)
+
+    new TwCitySelector({
+        el: "div#address",
+        elCounty: "select#county",
+        elDistrict: "select#district",
+    });
+
 }
 
 function export_pdf() {
