@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/PetitionSheetBase.css">
     <link rel="stylesheet" type="text/css" href="css/PetitionForm.css">
-    <link rel="stylesheet" type="text/css" href="topic/InitiativeNationalHolidayLaw/PetitionSheet.css">
+    <link id="petition_topic_css" rel="stylesheet" type="text/css" href="">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
@@ -55,6 +55,17 @@
                 <input class="address" type="text" name="number" id="number" placeholder="號">號
                 <input class="address" type="text" name="floor" id="floor" placeholder="樓">樓之&nbsp;
                 <input class="address" type="text" name="part" id="part" placeholder="">
+            </div>
+        </div>
+        <div class="tr">
+            <div class="label">
+                <label>連署題目</label>
+            </div>
+            <div class="input">
+                <select class="topic" name="topic" id="topic">
+                    <option value="ReferendumLaborLaw20180131">廢止民國107年1月31日公佈之「勞動基準法修訂條文」</option>
+                    <option value="InitiativeNationalHolidayLaw">制定「國定假日法」</option>
+                </select>
             </div>
         </div>
     </div>

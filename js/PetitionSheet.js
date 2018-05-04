@@ -9,6 +9,11 @@ function copy_input_to_span(id) {
     })
 }
 
+function change_topic(topic) {
+    $("link#petition_topic_css").attr('href',
+                                      'topic/' + topic + '/PetitionSheet.css');
+}
+
 function create_data_binding() {
     copy_input_to_span("id")
     copy_input_to_span("year")
@@ -149,6 +154,12 @@ function create_data_binding() {
             $("div.road_2_circle").hide();
         }
     })
+
+    $("select#topic").change(function() {
+        change_topic($(this).val());
+    })
+
+    change_topic($("select#topic").val());
 }
 
 function export_pdf() {
