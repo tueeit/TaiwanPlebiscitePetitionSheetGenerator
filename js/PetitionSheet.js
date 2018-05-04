@@ -14,8 +14,6 @@ function create_data_binding() {
     copy_input_to_span("year")
     copy_input_to_span("month")
     copy_input_to_span("date")
-    copy_input_to_span("county")
-    copy_input_to_span("district")
     copy_input_to_span("villiage")
     copy_input_to_span("neighbor")
     copy_input_to_span("road")
@@ -34,6 +32,85 @@ function create_data_binding() {
         elDistrict: "select#district",
     });
 
+    $("select#county").change(function() {
+        county = $(this).val();
+        county_name = county.substring(0, county.length - 1);
+        county_type = county.substring(county.length - 1, county.length);
+
+        if (county == '臺北市' || county == '新北市' || county == '臺中市' ||
+            county == '桃園市' || county == '臺南市' || county == '高雄市') {
+            $("span#province").text(county_name);
+            $("div.province_1_circle").hide();
+            $("div.province_2_circle").show();
+            $("span#county").text('');
+            $("div.county_1_circle").hide();
+            $("div.county_2_circle").hide();
+            return;
+        }
+
+        if (county == '金門縣' || county == '連江縣') {
+            $("span#province").text('福建');
+            $("div.province_1_circle").show();
+            $("div.province_2_circle").hide();
+            $("span#county").text(county_name);
+            $("div.county_1_circle").show();
+            $("div.county_2_circle").hide();
+            return;
+        }
+
+        $("span#province").text('臺灣');
+        $("div.province_1_circle").show();
+        $("div.province_2_circle").hide();
+        $("span#county").text(county_name);
+        if (county_type == '縣') {
+            $("div.county_1_circle").show();
+            $("div.county_2_circle").hide();
+        } else if (county_type == '市') {
+            $("div.county_1_circle").hide();
+            $("div.county_2_circle").show();
+        } else {
+            $("div.county_1_circle").hide();
+            $("div.county_2_circle").hide();
+        }
+    })
+
+    $("select#district").change(function() {
+        district = $(this).val();
+        district_name = district.substring(0, district.length - 1);
+        district_type = district.substring(district.length - 1, district.length);
+
+        if (district_type == '鄉') {
+            $("span#district").text(district_name);
+            $("div.district_1_circle").show();
+            $("div.district_2_circle").hide();
+            $("div.district_3_circle").hide();
+            $("div.district_4_circle").hide();
+        } else if (district_type == '鎮') {
+            $("span#district").text(district_name);
+            $("div.district_1_circle").hide();
+            $("div.district_2_circle").show();
+            $("div.district_3_circle").hide();
+            $("div.district_4_circle").hide();
+        } else if (district_type == '市') {
+            $("span#district").text(district_name);
+            $("div.district_1_circle").hide();
+            $("div.district_2_circle").hide();
+            $("div.district_3_circle").show();
+            $("div.district_4_circle").hide();
+        } else if (district_type == '區') {
+            $("span#district").text(district_name);
+            $("div.district_1_circle").hide();
+            $("div.district_2_circle").hide();
+            $("div.district_3_circle").hide();
+            $("div.district_4_circle").show();
+        } else {
+            $("span#district").text(district);
+            $("div.district_1_circle").hide();
+            $("div.district_2_circle").hide();
+            $("div.district_3_circle").hide();
+            $("div.district_4_circle").hide();
+        }
+    })
 }
 
 function export_pdf() {
