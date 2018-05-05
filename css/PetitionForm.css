@@ -8,6 +8,7 @@ div.pagehead {
     width: 100%;
     background: #e2eff2;
     padding: 10px 20px 4px;
+    z-index: 2;
 }
 
 div.pagehead h3 {
@@ -45,9 +46,11 @@ div.preview {
     padding-bottom: 40px;
     height: calc(100% - 260px);
     overflow: scroll;
+    z-index: -1;
 }
 
 div.footer {
+    z-index: 2;
     position: fixed;
     bottom: 0px;
     height: 40px;
@@ -58,7 +61,6 @@ div.footer {
 }
 
 div.footer button {
-    
     text-align: center;
     width: 200px;
     height: 32px;
