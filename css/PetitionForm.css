@@ -85,7 +85,7 @@ div.input span, div.location span{
 div.preview {
     padding-top: 140px;
     padding-bottom: 40px;
-    height: calc(100% - 260px);
+    height: calc(100% - 180px);
     overflow: scroll;
     z-index: -1;
 }
@@ -105,9 +105,19 @@ div.footer button {
     text-align: center;
     width: 200px;
     height: 32px;
+    border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
+    color: white;
+    background: #ff3366;
 }
+
+div.footer button:hover {
+    color: white;
+    background: #e6174b;
+}
+
 
 div#note {
     z-index: 3;
