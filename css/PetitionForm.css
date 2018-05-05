@@ -4,10 +4,12 @@ body {
 }
 
 div.pagehead {
+    box-sizing: border-box;
     position: fixed;
     width: 100%;
-    background: #e2eff2;
-    padding: 10px 20px 4px;
+    background: rgba(230,230,230,0.92);
+    box-shadow: 0px 2px 10px rgba(0,0,0,.25);
+    padding: 10px 20px 4px 20px;
     z-index: 2;
 }
 
@@ -23,6 +25,7 @@ input {
     padding:  0em 0.5em;
     border: 1px solid #dcdcdc;
     border-radius: 4px;
+    margin: 2px 1px;
 }
 
 select {
@@ -47,6 +50,9 @@ div.table {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    background: rgba(230,230,230,0.92);
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #5c5c5c;
 }
 
 div.tr {
@@ -95,9 +101,8 @@ div.footer {
     bottom: 0px;
     height: 40px;
     width: 100%;
-    background:#e2eff2;
+    background:rgba(233,233,235,0.87);
     padding: 10px 20px;
-    text-align: center;
     z-index: 2;
 }
 
@@ -123,12 +128,13 @@ div#note {
     z-index: 3;
     font-size: 12px;
     line-height: 1.4;
-    background:#e2eff2;
+    background: rgba(233,233,235,0.87);
     padding: 1em;
     position: fixed;
-    top: 35%;
+    bottom: 8px;
     right: 0px;
     width: 320px;
+    border-top-left-radius: 20px;
 }
 
 div#note ul {
