@@ -10,6 +10,10 @@ div.pagehead {
     padding: 10px 20px 4px;
 }
 
+div.pagehead h3 {
+    text-align: center;
+}
+
 input.name, input.id {
     width: 100px;
 }
@@ -50,4 +54,14 @@ div.footer {
     width: 100%;
     background:#e2eff2;
     padding: 10px 20px;
+    text-align: center;
+}
+
+div.footer button {
+    
+    text-align: center;
+    width: 200px;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
 }
