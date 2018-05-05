@@ -24,6 +24,7 @@ input {
     padding:  0em 0.5em;
     border: 1px solid #dcdcdc;
     border-radius: 4px;
+    margin: 2px 1px;
 }
 
 select {
