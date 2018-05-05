@@ -23,24 +23,3 @@ div.input {
     display: table-cell;
     width: 600px;
 }
-
-div#form {
-    width: 100%;
-    height: 150px;
-    top: 0px;
-    margin: 0px;
-    padding: 5px;
-    z-index: 10;
-    display: inline;
-    background-color: rgba(255, 255, 255, 1);
-    position: fixed;
-}
-
-div#separator {
-    background-color: rgba(255, 255, 255, 1);
-    width: 100%;
-    position: fixed;
-    padding: 5px;
-    top: 140px;
-    z-index: 10;
-}
