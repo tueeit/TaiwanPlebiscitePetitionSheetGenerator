@@ -9,6 +9,8 @@ $(document).ready(function() {
     create_data_binding();
     $("button#export_pdf").click(export_pdf);
     change_topic($("select#topic").val());
+
+    data_validation();
 });
 
 function copy_input_to_span(id) {
@@ -142,6 +144,52 @@ function handle_village_change() {
     }
 }
 
+function set_element_style(element, valid) {
+    if (valid) {
+        element.css("border-style", "");
+        element.css("border-width", "");
+        element.css("border-color", "");
+    } else {
+        element.css("border-style", "solid");
+        element.css("border-width", "medium");
+        element.css("border-color", "red");
+    }
+}
+
+function data_validation() {
+    result = true;
+
+    element = $("select#county");
+    valid = element.val() != "";
+    set_element_style(element, valid);
+    result = result & valid;
+
+    element = $("select#district");
+    valid = element.val() != "";
+    set_element_style(element, valid);
+    result = result & valid;
+
+    element = $("input#village");
+    valid = element.val() != "";
+    set_element_style(element, valid);
+    result = result & valid;
+
+    element = $("input#neighbor");
+    valid = element.val() != "";
+    set_element_style(element, valid);
+    result = result & valid;
+
+    element = $("input#road");
+    valid = element.val() != "";
+    set_element_style(element, valid);
+    result = result & valid;
+
+    element = $("input#number");
+    valid = element.val() != "";
+    set_element_style(element, valid);
+    result = result & valid;
+}
+
 function create_data_binding() {
     copy_input_to_span("id")
     copy_input_to_span("year")
@@ -163,6 +211,9 @@ function create_data_binding() {
     $("select#topic").change(function() {
         change_topic($(this).val());
     })
+
+    $("div#form_table").change(data_validation)
+    $("div#form_table").keyup(data_validation)
 }
 
 function export_pdf() {
