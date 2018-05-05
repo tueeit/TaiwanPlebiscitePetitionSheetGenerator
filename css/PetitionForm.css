@@ -126,7 +126,7 @@ div#note {
     background: rgba(233,233,235,0.87);
     padding: 1em;
     position: fixed;
-    bottom: 3%;
+    bottom: 8px;
     right: 0px;
     width: 320px;
 }
