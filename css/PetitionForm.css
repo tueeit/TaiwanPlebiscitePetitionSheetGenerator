@@ -95,9 +95,8 @@ div.footer {
     bottom: 0px;
     height: 40px;
     width: 100%;
-    background:#e2eff2;
+    background:rgba(233,233,235,0.87);
     padding: 10px 20px;
-    text-align: center;
     z-index: 2;
 }
 
@@ -123,10 +122,10 @@ div#note {
     z-index: 3;
     font-size: 12px;
     line-height: 1.4;
-    background:#e2eff2;
+    background: rgba(233,233,235,0.87);
     padding: 1em;
     position: fixed;
-    top: 35%;
+    bottom: 3%;
     right: 0px;
     width: 320px;
 }
