@@ -12,7 +12,7 @@
     <script src="js/PetitionSheet.js"></script>
 </head>
 <body>
-    <div class="table">
+    <div class="table" id="form">
         <div class="tr">
             <div class="label">
                 <label>姓名</label>
@@ -70,8 +70,11 @@
         </div>
     </div>
 
-    <hr>
-    <h3>連署書預覽</h3>
+    <div id="separator">
+        <hr>
+        <h3 style="display: inline;">連署書預覽</h3>
+        &nbsp;&nbsp;&nbsp;&nbsp;<button id="export_pdf">輸出PDF</button>
+    </div>
 
     <div class="sheet" id="sheet">
         <div class="id"><span id="id"></span></div>
@@ -103,6 +106,4 @@
         <div class="floor"><span id="floor"></div>
         <div class="part"><span id="part"></span></div>
     </div>
-
-    <button id="export_pdf">輸出PDF</button>
 </body>
