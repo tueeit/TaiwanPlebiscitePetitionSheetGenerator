@@ -156,6 +156,35 @@ function set_element_style(element, valid) {
     }
 }
 
+function id_validation(id) {
+    id_regexp = new RegExp('^[A-Z][01][0-9]{8}$');
+    if (!id_regexp.test(id)) {
+        return false;
+    }
+
+    alpha_base = 10;
+    alpha_order = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
+                // :10  :15  :20  :25  :30  :35
+
+    id_alpha_value = alpha_base + alpha_order.indexOf(id.charAt(0));
+    id_value = [Math.floor(id_alpha_value / 10), id_alpha_value % 10];
+    for (i = 1; i < id.length; i++) {
+        id_value.push(parseInt(id.charAt(i), 10));
+    }
+
+    id_weight = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1];
+    sum = 0;
+    for (i = 0; i < id_value.length; i++) {
+        sum += id_value[i] * id_weight[i];
+    }
+
+    if (sum % 10 != 0) {
+        return false;
+    }
+
+    return true;
+}
+
 function data_validation() {
     result = true;
 
@@ -186,6 +215,11 @@ function data_validation() {
 
     element = $("input#number");
     valid = element.val() != "";
+    set_element_style(element, valid);
+    result = result & valid;
+
+    element = $("input#id");
+    valid = id_validation(element.val());
     set_element_style(element, valid);
     result = result & valid;
 }
