@@ -309,7 +309,8 @@ function export_pdf() {
             var sheet_img = canvas.toDataURL('image/png');
             var pdf = new jsPDF('l', 'mm', 'a4');
             pdf.addImage(sheet_img, 'PNG', 0, 0);
-            pdf.save('連署書.pdf');
+            topic = $("select#topic option:selected").text();
+            pdf.save('公投連署書 - ' + topic + '.pdf');
         }
     });
 }
