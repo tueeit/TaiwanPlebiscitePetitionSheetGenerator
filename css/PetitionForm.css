@@ -81,12 +81,17 @@ div.location {
     padding: 6px;
 }
 
+div.topic {
+    display: flex;
+    align-items: baseline;
+    width: 1000px;
+    padding: 6px;
+}
+
 div.input span, div.location span{
     font-size: 12px;
     padding:  0px 2px;
 }
-
-
 
 div.preview {
     padding-top: 140px;
