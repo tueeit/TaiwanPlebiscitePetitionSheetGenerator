@@ -13,38 +13,79 @@ div.pagehead {
 
 div.pagehead h3 {
     text-align: center;
+    margin: 0.25em 0em;
+    letter-spacing: 2px;
+}
+
+input {
+    letter-spacing: 1px;
+    height: 24px;
+    padding:  0em 0.5em;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+}
+
+select {
+    letter-spacing: 1px;
+    height: 24px;
+    padding:  0em 0.5em;
 }
 
 input.name, input.id {
     width: 100px;
 }
 
-input.birthday, input.address {
-    width: 80px;
+input.birthday {
+    width: 60px;
+}
+
+input.address {
+    width: 60px;
 }
 
 div.table {
-    display: table;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 div.tr {
-    display: table-row;
+    display: flex;
+    align-items: baseline;
 }
 
 div.label {
-    display: table-cell;
-    width: 100px;
+    display: flex;
+    min-width: 3em;
+    letter-spacing: 1px;
 }
 
 div.input {
-    display: table-cell;
-    width: 600px;
+    display: flex;
+    align-items: baseline;
+    width: 120px;
+    padding: 6px;
 }
 
+div.location {
+    display: flex;
+    align-items: baseline;
+    width: 1000px;
+    flex-wrap: wrap;
+    padding: 6px;
+}
+
+div.input span, div.location span{
+    font-size: 12px;
+    padding:  0px 2px;
+}
+
+
+
 div.preview {
-    padding-top: 200px;
+    padding-top: 140px;
     padding-bottom: 40px;
-    height: calc(100% - 260px);
+    height: calc(100% - 180px);
     overflow: scroll;
     z-index: -1;
 }
@@ -64,23 +105,38 @@ div.footer button {
     text-align: center;
     width: 200px;
     height: 32px;
+    border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
+    color: white;
+    background: #ff3366;
 }
 
+div.footer button:hover {
+    color: white;
+    background: #e6174b;
+}
+
+
 div#note {
+    z-index: 3;
+    font-size: 12px;
+    line-height: 1.4;
     background:#e2eff2;
-    padding: 5px;
+    padding: 1em;
     position: fixed;
-    font-size: 14px;
-    top: 0px;
+    top: 35%;
     right: 0px;
-    width: 300px;
+    width: 320px;
 }
 
 div#note ul {
+    font-size: 12px;
     margin: 0px;
     padding: 0px 0px 0px 10px;
+    list-style-type: none;
+    line-height: 1.5;
 }
 
 div#note a {
