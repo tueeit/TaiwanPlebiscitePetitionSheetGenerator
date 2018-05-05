@@ -15,51 +15,47 @@
 <body>
     <div class="pagehead">
         <div class="table">
-            <div class="tr">
+            <div class="tr person">
                 <div class="label">
                     <label>姓名</label>
                 </div>
                 <div class="input">
                     <input class="name" type="text" name="name" id="name" placeholder="姓名">
                 </div>
-            </div>
-            <div class="tr">
                 <div class="label">
                     <label>身份證字號</label>
                 </div>
                 <div class="input">
                     <input class="id" type="text" name="id" id="id" maxlength="10" placeholder="身份證字號">
                 </div>
-            </div>
-            <div class="tr">
                 <div class="label">
                     <label>生日</label>
                 </div>
                 <div class="input">
-                    <input class="birthday" type="text" name="year" id="year" maxlength="4" placeholder="西元年">-
-                    <input class="birthday" type="text" name="month" id="month" maxlength="2" placeholder="月">-
+                    <input class="birthday" type="text" name="year" id="year" maxlength="4" placeholder="西元年"><span>-</span>
+                    <input class="birthday" type="text" name="month" id="month" maxlength="2" placeholder="月"><span>-</span>
                     <input class="birthday" type="text" name="date" id="date" maxlength="2" placeholder="日">
                 </div>
             </div>
-            <div class="tr">
+            <div class="tr mail">
                 <div class="label">
                     <label>地址</label>
                 </div>
-                <div class="input" id="address">
+                <div class="location" id="address">
                     <select class="county" id="county"></select>&nbsp;
                     <select class="district" id="district"></select>&nbsp;
-                    <input class="address" type="text" name="villiage" id="villiage" placeholder="村/里">&nbsp;
-                    <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰">鄰&nbsp;
-                    <input class="address" type="text" name="road" id="road" placeholder="路/街">&nbsp;
-                    <input class="address" type="text" name="section" id="section" placeholder="段">段
-                    <input class="address" type="text" name="lane" id="lane" placeholder="巷">巷&nbsp;
-                    <input class="address" type="text" name="alley" id="alley" placeholder="弄">弄&nbsp;
-                    <input class="address" type="text" name="number" id="number" placeholder="號">號
-                    <input class="address" type="text" name="floor" id="floor" placeholder="樓">樓之&nbsp;
+                    <input class="address" type="text" name="villiage" id="villiage" placeholder="村/里">
+                    <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰"><span>鄰</span>
+                    <input class="address" type="text" name="road" id="road" placeholder="路/街">
+                    <input class="address" type="text" name="section" id="section" placeholder="段"><span>段</span>
+                    <input class="address" type="text" name="lane" id="lane" placeholder="巷"><span>巷</span>
+                    <input class="address" type="text" name="alley" id="alley" placeholder="弄"><span>弄</span>
+                    <input class="address" type="text" name="number" id="number" placeholder="號"><span>號</span>
+                    <input class="address" type="text" name="floor" id="floor" placeholder="樓"><span>樓之</span>
                     <input class="address" type="text" name="part" id="part" placeholder="">
                 </div>
             </div>
-            <div class="tr">
+            <div class="tr subject">
                 <div class="label">
                     <label>連署題目</label>
                 </div>
@@ -73,15 +69,6 @@
         </div>
         <hr>
         <h3>連署書預覽</h3>
-
-        <div id="note">
-            說明：
-            <ul>
-                <li>輸出pdf前請在預覽中確認資料及格式正確無誤，遇到任何問題歡迎到<a href="https://www.facebook.com/TUEEIT/">FB專頁</a>或<a href="mailto:tueeit+petition@gmail.com?subject=公投連署書工具問題">來信</a>回報，我們會盡快處理。</li>
-                <li>所有個人資訊只在輸出連署書時一次性使用，本工具不會蒐集、紀錄。</li>
-                <li>本工具由<a href="http://www.tueeit.org.tw/">電資工會</a>開發，並<a href="https://github.com/tueeit/TaiwanPlebiscitePetitionSheetGenerator/">開放原始碼</a>，歡迎重用或協助我們讓它變得更好。</li>
-            </ul>
-        </div>
 
     </div>
 
@@ -121,5 +108,13 @@
     </div>
     <div class="footer">
         <button id="export_pdf">輸出PDF</button>
+    </div>
+    <div id="note">
+        說明：
+        <ul>
+            <li>輸出pdf前請在預覽中確認資料及格式正確無誤，遇到任何問題歡迎到<a href="https://www.facebook.com/TUEEIT/">FB專頁</a>或<a href="mailto:tueeit+petition@gmail.com?subject=公投連署書工具問題">來信</a>回報，我們會盡快處理。</li>
+            <li>所有個人資訊只在輸出連署書時一次性使用，本工具不會蒐集、紀錄。</li>
+            <li>本工具由<a href="http://www.tueeit.org.tw/">電資工會</a>開發，並<a href="https://github.com/tueeit/TaiwanPlebiscitePetitionSheetGenerator/">開放原始碼</a>，歡迎重用或協助我們讓它變得更好。</li>
+        </ul>
     </div>
 </body>
