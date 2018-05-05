@@ -12,97 +12,103 @@
     <script src="js/PetitionSheet.js"></script>
 </head>
 <body>
-    <div class="table">
-        <div class="tr">
-            <div class="label">
-                <label>姓名</label>
+    <div class="pagehead">
+        <div class="table">
+            <div class="tr">
+                <div class="label">
+                    <label>姓名</label>
+                </div>
+                <div class="input">
+                    <input class="name" type="text" name="name" id="name" placeholder="姓名">
+                </div>
             </div>
-            <div class="input">
-                <input class="name" type="text" name="name" id="name" placeholder="姓名">
+            <div class="tr">
+                <div class="label">
+                    <label>身份證字號</label>
+                </div>
+                <div class="input">
+                    <input class="id" type="text" name="id" id="id" maxlength="10" placeholder="身份證字號">
+                </div>
+            </div>
+            <div class="tr">
+                <div class="label">
+                    <label>生日</label>
+                </div>
+                <div class="input">
+                    <input class="birthday" type="text" name="year" id="year" maxlength="4" placeholder="西元年">-
+                    <input class="birthday" type="text" name="month" id="month" maxlength="2" placeholder="月">-
+                    <input class="birthday" type="text" name="date" id="date" maxlength="2" placeholder="日">
+                </div>
+            </div>
+            <div class="tr">
+                <div class="label">
+                    <label>地址</label>
+                </div>
+                <div class="input" id="address">
+                    <select class="county" id="county"></select>&nbsp;
+                    <select class="district" id="district"></select>&nbsp;
+                    <input class="address" type="text" name="villiage" id="villiage" placeholder="村/里">&nbsp;
+                    <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰">鄰&nbsp;
+                    <input class="address" type="text" name="road" id="road" placeholder="路/街">&nbsp;
+                    <input class="address" type="text" name="section" id="section" placeholder="段">段
+                    <input class="address" type="text" name="lane" id="lane" placeholder="巷">巷&nbsp;
+                    <input class="address" type="text" name="alley" id="alley" placeholder="弄">弄&nbsp;
+                    <input class="address" type="text" name="number" id="number" placeholder="號">號
+                    <input class="address" type="text" name="floor" id="floor" placeholder="樓">樓之&nbsp;
+                    <input class="address" type="text" name="part" id="part" placeholder="">
+                </div>
+            </div>
+            <div class="tr">
+                <div class="label">
+                    <label>連署題目</label>
+                </div>
+                <div class="input">
+                    <select class="topic" name="topic" id="topic">
+                        <option value="ReferendumLaborLaw20180131">廢止民國107年1月31日公佈之「勞動基準法修訂條文」</option>
+                        <option value="InitiativeNationalHolidayLaw">制定「國定假日法」</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="tr">
-            <div class="label">
-                <label>身份證字號</label>
-            </div>
-            <div class="input">
-                <input class="id" type="text" name="id" id="id" maxlength="10" placeholder="身份證字號">
-            </div>
-        </div>
-        <div class="tr">
-            <div class="label">
-                <label>生日</label>
-            </div>
-            <div class="input">
-                <input class="birthday" type="text" name="year" id="year" maxlength="4" placeholder="西元年">-
-                <input class="birthday" type="text" name="month" id="month" maxlength="2" placeholder="月">-
-                <input class="birthday" type="text" name="date" id="date" maxlength="2" placeholder="日">
-            </div>
-        </div>
-        <div class="tr">
-            <div class="label">
-                <label>地址</label>
-            </div>
-            <div class="input" id="address">
-                <select class="county" id="county"></select>&nbsp;
-                <select class="district" id="district"></select>&nbsp;
-                <input class="address" type="text" name="villiage" id="villiage" placeholder="村/里">&nbsp;
-                <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰">鄰&nbsp;
-                <input class="address" type="text" name="road" id="road" placeholder="路/街">&nbsp;
-                <input class="address" type="text" name="section" id="section" placeholder="段">段
-                <input class="address" type="text" name="lane" id="lane" placeholder="巷">巷&nbsp;
-                <input class="address" type="text" name="alley" id="alley" placeholder="弄">弄&nbsp;
-                <input class="address" type="text" name="number" id="number" placeholder="號">號
-                <input class="address" type="text" name="floor" id="floor" placeholder="樓">樓之&nbsp;
-                <input class="address" type="text" name="part" id="part" placeholder="">
-            </div>
-        </div>
-        <div class="tr">
-            <div class="label">
-                <label>連署題目</label>
-            </div>
-            <div class="input">
-                <select class="topic" name="topic" id="topic">
-                    <option value="ReferendumLaborLaw20180131">廢止民國107年1月31日公佈之「勞動基準法修訂條文」</option>
-                    <option value="InitiativeNationalHolidayLaw">制定「國定假日法」</option>
-                </select>
-            </div>
-        </div>
+        <hr>
+        <h3>連署書預覽</h3>
     </div>
 
-    <hr>
-    <h3>連署書預覽</h3>
+    <div class="preview">
 
-    <div class="sheet" id="sheet">
-        <div class="id"><span id="id"></span></div>
-        <div class="year"><span id="year"></span></div>
-        <div class="month"><span id="month"></span></div>
-        <div class="date"><span id="date"></span></div>
-        <div class="province"><span id="province"></span></div>
-        <div class="province_1_circle circle">◯</div>
-        <div class="province_2_circle circle">◯</div>
-        <div class="county"><span id="county"></span></div>
-        <div class="county_1_circle circle">◯</div>
-        <div class="county_2_circle circle">◯</div>
-        <div class="district"><span id="district"></span></div>
-        <div class="district_1_circle circle">◯</div>
-        <div class="district_2_circle circle">◯</div>
-        <div class="district_3_circle circle">◯</div>
-        <div class="district_4_circle circle">◯</div>
-        <div class="villiage"><span id="villiage"></span></div>
-        <div class="villiage_1_circle circle">◯</div>
-        <div class="villiage_2_circle circle">◯</div>
-        <div class="neighbor"><span id="neighbor"></span></div>
-        <div class="road"><span id="road"></span></div>
-        <div class="road_1_circle circle">◯</div>
-        <div class="road_2_circle circle">◯</div>
-        <div class="section"><span id="section"></span></div>
-        <div class="lane"><span id="lane"></div>
-        <div class="alley"><span id="alley"></div>
-        <div class="number"><span id="number"></div>
-        <div class="floor"><span id="floor"></div>
-        <div class="part"><span id="part"></span></div>
+        <div class="sheet" id="sheet">
+            <div class="id"><span id="id"></span></div>
+            <div class="year"><span id="year"></span></div>
+            <div class="month"><span id="month"></span></div>
+            <div class="date"><span id="date"></span></div>
+            <div class="province"><span id="province"></span></div>
+            <div class="province_1_circle circle">◯</div>
+            <div class="province_2_circle circle">◯</div>
+            <div class="county"><span id="county"></span></div>
+            <div class="county_1_circle circle">◯</div>
+            <div class="county_2_circle circle">◯</div>
+            <div class="district"><span id="district"></span></div>
+            <div class="district_1_circle circle">◯</div>
+            <div class="district_2_circle circle">◯</div>
+            <div class="district_3_circle circle">◯</div>
+            <div class="district_4_circle circle">◯</div>
+            <div class="villiage"><span id="villiage"></span></div>
+            <div class="villiage_1_circle circle">◯</div>
+            <div class="villiage_2_circle circle">◯</div>
+            <div class="neighbor"><span id="neighbor"></span></div>
+            <div class="road"><span id="road"></span></div>
+            <div class="road_1_circle circle">◯</div>
+            <div class="road_2_circle circle">◯</div>
+            <div class="section"><span id="section"></span></div>
+            <div class="lane"><span id="lane"></div>
+            <div class="alley"><span id="alley"></div>
+            <div class="number"><span id="number"></div>
+            <div class="floor"><span id="floor"></div>
+            <div class="part"><span id="part"></span></div>
+        </div>
+            
     </div>
-
-    <button id="export_pdf">輸出PDF</button>
+    <div class="footer">
+        <button id="export_pdf">輸出PDF</button>
+    </div>
 </body>
