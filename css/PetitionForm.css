@@ -50,7 +50,6 @@ div.preview {
 }
 
 div.footer {
-    z-index: 2;
     position: fixed;
     bottom: 0px;
     height: 40px;
@@ -58,6 +57,7 @@ div.footer {
     background:#e2eff2;
     padding: 10px 20px;
     text-align: center;
+    z-index: 2;
 }
 
 div.footer button {
