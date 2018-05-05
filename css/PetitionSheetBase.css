@@ -7,8 +7,8 @@ div.sheet {
 div.id, div.year, div.month, div.date, div.province, div.province_1_circle,
 div.province_2_circle, div.county, div.county_1_circle, div.county_2_circle,
 div.district, div.district_1_circle, div.district_2_circle,
-div.district_3_circle, div.district_4_circle, div.villiage,
-div.villiage_1_circle, div.villiage_2_circle, div.neighbor, div.road,
+div.district_3_circle, div.district_4_circle, div.village,
+div.village_1_circle, div.village_2_circle, div.neighbor, div.road,
 div.road_1_circle, div.road_2_circle, div.section, div.lane,
 div.alley, div.number, div.floor, div.part {
     position: absolute;

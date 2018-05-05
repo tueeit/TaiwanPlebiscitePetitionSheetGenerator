@@ -123,22 +123,22 @@ function handle_road_change() {
 }
 
 function handle_village_change() {
-    villiage = $(this).val();
-    villiage_name = villiage.substring(0, villiage.length - 1);
-    villiage_type = villiage.substring(villiage.length - 1, villiage.length);
+    village = $(this).val();
+    village_name = village.substring(0, village.length - 1);
+    village_type = village.substring(village.length - 1, village.length);
 
-    if (villiage_type == '村') {
-        $("span#villiage").text(villiage_name);
-        $("div.villiage_1_circle").show();
-        $("div.villiage_2_circle").hide();
-    } else if (villiage_type == '里') {
-        $("span#villiage").text(villiage_name);
-        $("div.villiage_1_circle").hide();
-        $("div.villiage_2_circle").show();
+    if (village_type == '村') {
+        $("span#village").text(village_name);
+        $("div.village_1_circle").show();
+        $("div.village_2_circle").hide();
+    } else if (village_type == '里') {
+        $("span#village").text(village_name);
+        $("div.village_1_circle").hide();
+        $("div.village_2_circle").show();
     } else {
-        $("span#villiage").text(villiage);
-        $("div.villiage_1_circle").hide();
-        $("div.villiage_2_circle").hide();
+        $("span#village").text(village);
+        $("div.village_1_circle").hide();
+        $("div.village_2_circle").hide();
     }
 }
 
@@ -157,7 +157,7 @@ function create_data_binding() {
 
     $("select#county").change(handle_county_change)
     $("select#district").change(handle_district_change)
-    $("input#villiage").keyup(handle_village_change)
+    $("input#village").keyup(handle_village_change)
     $("input#road").keyup(handle_road_change)
 
     $("select#topic").change(function() {
