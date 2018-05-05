@@ -67,3 +67,22 @@ div.footer button {
     margin-left: auto;
     margin-right: auto;
 }
+
+div#note {
+    background:#e2eff2;
+    padding: 5px;
+    position: fixed;
+    font-size: 14px;
+    top: 0px;
+    right: 0px;
+    width: 300px;
+}
+
+div#note ul {
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+}
+
+div#note a {
+    font-weight: bold;
+}
