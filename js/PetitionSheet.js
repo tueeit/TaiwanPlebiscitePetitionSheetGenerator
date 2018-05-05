@@ -268,6 +268,8 @@ function data_validation() {
     set_element_style(month_element, valid);
     set_element_style(date_element, valid);
     result = result & valid;
+
+    return result;
 }
 
 function create_data_binding() {
@@ -297,6 +299,11 @@ function create_data_binding() {
 }
 
 function export_pdf() {
+    if (!data_validation()) {
+        alert('資料不齊全或錯誤，請修正紅框標示處的資料，若為程式誤判請聯絡我們');
+        return;
+    }
+
     html2canvas($("div#sheet"), {
         onrendered: function(canvas) {
             var sheet_img = canvas.toDataURL('image/png');
