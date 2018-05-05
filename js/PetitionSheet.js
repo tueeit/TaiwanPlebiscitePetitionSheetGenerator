@@ -185,6 +185,43 @@ function id_validation(id) {
     return true;
 }
 
+function birthday_validation(year_element, month_element, date_element) {
+    birth_year = year_element.val();
+    birth_month = month_element.val();
+    birth_date = date_element.val();
+
+    input_birthday_string = birth_year + '-' + birth_month + '-' + birth_date;
+    birthday = new Date(parseInt(birth_year, 10), parseInt(birth_month, 10) - 1,
+                        parseInt(birth_date, 10));
+    parsed_birthday_string = birthday.getFullYear().toString() + '-' +
+                             (birthday.getMonth() + 1).toString() + '-' +
+                             birthday.getDate().toString();
+    if (input_birthday_string != parsed_birthday_string) {
+        return false;
+    }
+
+    // Check above age 18.
+    // FIXME: Different petition has different due date.
+    due_year = 2018;
+    due_month = 7;
+    due_date = 31;
+
+    if (due_year - birth_year < 18) {
+        return false;
+    }
+
+    if (due_year - birth_year == 18 && due_month < birth_month) {
+        return false;
+    }
+
+    if (due_year - birth_year == 18 && due_month == birth_month &&
+        due_date < birth_date) {
+        return false;
+    }
+
+    return true;
+}
+
 function data_validation() {
     result = true;
 
@@ -221,6 +258,15 @@ function data_validation() {
     element = $("input#id");
     valid = id_validation(element.val());
     set_element_style(element, valid);
+    result = result & valid;
+
+    year_element = $("input#year");
+    month_element = $("input#month");
+    date_element = $("input#date");
+    valid = birthday_validation(year_element, month_element, date_element);
+    set_element_style(year_element, valid);
+    set_element_style(month_element, valid);
+    set_element_style(date_element, valid);
     result = result & valid;
 }
 
