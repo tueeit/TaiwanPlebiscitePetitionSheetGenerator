@@ -136,6 +136,7 @@ div#note ul {
     margin: 0px;
     padding: 0px 0px 0px 10px;
     list-style-type: none;
+    line-height: 1.5;
 }
 
 div#note a {
