@@ -78,3 +78,35 @@ span#sender_name {
     left: 0px;
     top: 70px;
 }
+
+div.receiver {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 40mm;
+    left: 60mm;
+    height: 70mm;
+    width: 100mm;
+}
+
+span#receiver_zipcode {
+    display: block;
+    font-family: 'Inconsolata', monospace;
+    font-size: 28px;
+    left: 0px;
+}
+
+span#receiver_address {
+    display: block;
+    position: absolute;
+    font-size: 26px;
+    left: 0px;
+}
+
+span#receiver_name {
+    display: block;
+    position: absolute;
+    font-size: 26px;
+    left: 0px;
+    top: 100px;
+}
