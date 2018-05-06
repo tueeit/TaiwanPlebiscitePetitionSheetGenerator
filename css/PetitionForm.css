@@ -3,6 +3,10 @@ body {
     margin: 0px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 div.pagehead {
     box-sizing: border-box;
     position: fixed;
