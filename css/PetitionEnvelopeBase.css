@@ -11,7 +11,7 @@ div.envelope_top, div.envelope_middle, div.envelope_bottom {
     margin: 0px;
     padding: 0px;
     width: 100%;
-    height: 92.33mm;
+    height: 33%;
 }
 
 div.envelope_top {
@@ -21,7 +21,7 @@ div.envelope_top {
 div.envelope_middle {
     border-top: 2px dashed black;
     border-bottom: 2px dashed black;
-    top: 92.33mm;
+    top: 33%;
 }
 
 div.envelope_bottom {
