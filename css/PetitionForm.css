@@ -25,7 +25,7 @@ div.pagehead h3 {
 
 input {
     letter-spacing: 1px;
-    height: 24px;
+    height: 32px;
     padding:  0em 0.5em;
     border: 1px solid #dcdcdc;
     border-radius: 4px;
@@ -34,20 +34,20 @@ input {
 
 select {
     letter-spacing: 1px;
-    height: 24px;
+    height: 32px;
     padding:  0em 0.5em;
 }
 
 input.name, input.id {
-    width: 100px;
+    width: 120px;
 }
 
 input.birthday {
-    width: 60px;
+    width: 80px;
 }
 
 input.address {
-    width: 60px;
+    width: 80px;
 }
 
 div.table {
@@ -55,7 +55,7 @@ div.table {
     display: flex;
     flex-direction: column;
     background: rgba(247,250,251,0.875);
-    padding: 10px;
+    padding: 10px 20px;
     border: 1px dashed #5c5c5c;
     border-radius: 20px;
 }
@@ -74,7 +74,7 @@ div.label {
 div.input {
     display: flex;
     align-items: baseline;
-    width: 120px;
+    width: 160px;
     padding: 6px;
 }
 
@@ -117,7 +117,7 @@ div.preview {
 div.footer {
     position: fixed;
     bottom: 0px;
-    height: 40px;
+    height: 60px;
     width: 100%;
     background:rgba(247,250,251,0.36);
     padding: 10px 20px;
