@@ -1,0 +1,112 @@
+div.envelope {
+    background: white;
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    background-size: 100% 100%;
+}
+
+div.envelope_top, div.envelope_middle, div.envelope_bottom {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 92.33mm;
+}
+
+div.envelope_top {
+    top: 0mm;
+}
+
+div.envelope_middle {
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+    top: 92.33mm;
+}
+
+div.envelope_bottom {
+    bottom: 0mm;
+}
+
+div.stamp {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 0mm;
+    right: 0mm;
+    height: 40mm;
+    width: 74mm;
+    text-align: center;
+}
+
+div.sender {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 10mm;
+    left: 10mm;
+    height: 40mm;
+    width: 100mm;
+}
+
+span#stamp {
+    position: absolute;
+    border: 2px solid Gainsboro;
+    top: 5mm;
+    height: 30mm;
+    width: 30mm;
+}
+
+span#sender_zipcode {
+    display: block;
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
+    left: 0px;
+}
+
+span#sender_address {
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    left: 0px;
+}
+
+span#sender_name {
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    left: 0px;
+    top: 70px;
+}
+
+div.receiver {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 40mm;
+    left: 60mm;
+    height: 70mm;
+    width: 100mm;
+}
+
+span#receiver_zipcode {
+    display: block;
+    font-family: 'Inconsolata', monospace;
+    font-size: 28px;
+    left: 0px;
+}
+
+span#receiver_address {
+    display: block;
+    position: absolute;
+    font-size: 26px;
+    left: 0px;
+}
+
+span#receiver_name {
+    display: block;
+    position: absolute;
+    font-size: 26px;
+    left: 0px;
+    top: 100px;
+}

@@ -4,6 +4,7 @@ $(document).ready(function() {
         el: "div#address",
         elCounty: "select#county",
         elDistrict: "select#district",
+        elZipcode: "input#zipcode"
     });
 
     create_data_binding();
@@ -272,6 +273,86 @@ function data_validation() {
     return result;
 }
 
+function update_envelope() {
+    $("span#sender_zipcode").text($("input#zipcode").val());
+    $("span#sender_name").text($("input#name").val());
+    sender_address = $("select#county").val() +
+        $("select#district").val() +
+        $("input#village").val() +
+        $("input#neighbor").val() + '鄰' +
+        $("input#road").val() +
+        ($("input#section").val() == '' ? '' : $("input#section").val() + '段') +
+        ($("input#lane").val() == '' ? '' : $("input#lane").val() + '巷') +
+        ($("input#alley").val() == '' ? '' : $("input#alley").val() + '弄') +
+        $("input#number").val() + '號' +
+        ($("input#floor").val() == '' ? '' : $("input#floor").val() + '樓') +
+        ($("input#part").val() == '' ? '' : '之' + $("input#part").val());
+    $("span#sender_address").text(sender_address);
+
+    // FIXME: The address mapping is for "National Holiday Law" and "Labor Law"
+    // petition only.
+    receiver_zipcode = '';
+    receiver_address = '';
+    receiver_name = '';
+
+    county = $("select#county").val();
+    if (county == '基隆市') {
+        receiver_zipcode = '20048';
+        receiver_address = '基隆市仁愛區仁二路81號2樓';
+        receiver_name = '人民民主陣線';
+    } else if (county == '臺北市') {
+        receiver_zipcode = '10452';
+        receiver_address = '台北市中山區德惠街3巷10號1樓';
+        receiver_name = '台灣國際勞工協會';
+    } else if (county == '新北市') {
+        receiver_zipcode = '10452';
+        receiver_address = '臺北市中山區民權西路27號2樓';
+        receiver_name = '全國教師工會總聯合會';
+    } else if (county == '桃園市') {
+        receiver_zipcode = '33441';
+        receiver_address = '桃園市八德區介壽路一段199號3樓';
+        receiver_name = '桃園市產業總工會';
+    } else if (county == '新竹縣' || county == '新竹市' || county == '苗栗縣') {
+        receiver_zipcode = '30268';
+        receiver_address = '新竹縣竹北市縣政二路606號';
+        receiver_name = '勞動黨';
+    } else if (county == '臺中市') {
+        receiver_zipcode = '42242';
+        receiver_address = '台中市石岡區豐勢路梅子巷37-6號';
+        receiver_name = '台灣社區重建協會';
+    } else if (county == '彰化縣' || county == '南投縣' || county == '雲林縣') {
+        receiver_zipcode = '63801';
+        receiver_address = '雲林縣麥寮鄉台塑工業園區8號福利大樓2樓';
+        receiver_name = '雲林縣產業總工會';
+    } else if (county == '嘉義縣' || county == '嘉義市') {
+        receiver_zipcode = '24162';
+        receiver_address = '新北市三重區力行路1段127號2樓';
+        receiver_name = '新海瓦斯工會';
+    } else if (county == '臺南市' || county == '金門縣' || county == '澎湖縣' ||
+               county == '連江縣') {
+        receiver_zipcode = '71752';
+        receiver_address = '台南市仁德區中山路136號';
+        receiver_name = '台南市產業總工會';
+    } else if (county == '高雄市' || county == '屏東縣') {
+        receiver_zipcode = '80660';
+        receiver_address = '高雄市前鎮區中山三路132號4樓';
+        receiver_name = '高雄市產業總工會';
+    } else if (county == '宜蘭縣' || county == '花蓮縣' || county == '臺東縣') {
+        receiver_zipcode = '26946';
+        receiver_address = '宜蘭縣冬山鄉冬山路170號';
+        receiver_name = '宜蘭縣產業總工會';
+    }
+
+    $("span#receiver_zipcode").text(receiver_zipcode);
+    $("span#receiver_address").text(receiver_address);
+    $("span#receiver_name").text(receiver_name + '　　收');
+}
+
+function form_data_change() {
+    data_validation();
+    update_envelope();
+}
+
 function create_data_binding() {
     copy_input_to_span("id")
     copy_input_to_span("year")
@@ -294,8 +375,8 @@ function create_data_binding() {
         change_topic($(this).val());
     })
 
-    $("div#form_table").change(data_validation)
-    $("div#form_table").keyup(data_validation)
+    $("div#form_table").change(form_data_change)
+    $("div#form_table").keyup(form_data_change)
 }
 
 function export_pdf() {
@@ -305,12 +386,39 @@ function export_pdf() {
     }
 
     html2canvas($("div#sheet"), {
-        onrendered: function(canvas) {
-            var sheet_img = canvas.toDataURL('image/png');
-            var pdf = new jsPDF('l', 'mm', 'a4');
-            pdf.addImage(sheet_img, 'PNG', 0, 0);
-            topic = $("select#topic option:selected").text();
-            pdf.save('公投連署書 - ' + topic + '.pdf');
+        useCORS: true,
+        allowTaint: true,
+        taintTest: false,
+        onrendered: function(sheet_canvas) {
+            var sheet_img = sheet_canvas.toDataURL('image/png');
+
+            html2canvas($("div#envelope"), {
+                useCORS: true,
+                allowTaint: true,
+                taintTest: false,
+                onrendered: function(envelope_canvas) {
+                    // Rotate envelop 90 degrees right.
+                    rotated_envelope_canvas = document.createElement('canvas');
+                    rotated_envelope_canvas.width = envelope_canvas.height;
+                    rotated_envelope_canvas.height = envelope_canvas.width;
+                    rotated_envelope_ctx = rotated_envelope_canvas.getContext('2d');
+                    rotated_envelope_ctx.rotate(90 * Math.PI / 180);
+                    rotated_envelope_ctx.drawImage(
+                        envelope_canvas,
+                        0,
+                        -envelope_canvas.height
+                    );
+                    var envelop_imge = rotated_envelope_canvas.toDataURL('image/png');
+
+                    var pdf = new jsPDF('l', 'pt', 'a4');
+                    pdf.addImage(sheet_img, 'PNG', 0, 0);
+                    pdf.addPage();
+                    pdf.addImage(envelop_imge, 'PNG', 0, 0);
+
+                    topic = $("select#topic option:selected").text();
+                    pdf.save('公投連署書 - ' + topic + '（請雙面列印）.pdf');
+                }
+            })
         }
     });
 }

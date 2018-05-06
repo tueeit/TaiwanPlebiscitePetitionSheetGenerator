@@ -106,6 +106,7 @@ div.preview {
     height: calc(100% - 180px);
     overflow: scroll;
     z-index: -1;
+    background: gray;
 }
 
 div.footer {
