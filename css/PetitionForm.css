@@ -162,3 +162,7 @@ div#note a {
     color: #1474b6;
     font-weight: bold;
 }
+
+div#note a:hover {
+    color: #44b4ec;
+}
