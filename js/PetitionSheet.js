@@ -4,6 +4,7 @@ $(document).ready(function() {
         el: "div#address",
         elCounty: "select#county",
         elDistrict: "select#district",
+        elZipcode: "input#zipcode"
     });
 
     create_data_binding();
@@ -272,6 +273,28 @@ function data_validation() {
     return result;
 }
 
+function update_envelope() {
+    $("span#sender_zipcode").text($("input#zipcode").val());
+    $("span#sender_name").text($("input#name").val());
+    sender_address = $("select#county").val() +
+        $("select#district").val() +
+        $("input#village").val() +
+        $("input#neighbor").val() + '鄰' +
+        $("input#road").val() +
+        ($("input#section").val() == '' ? '' : $("input#section").val() + '段') +
+        ($("input#lane").val() == '' ? '' : $("input#lane").val() + '巷') +
+        ($("input#alley").val() == '' ? '' : $("input#alley").val() + '弄') +
+        $("input#number").val() + '號' +
+        ($("input#floor").val() == '' ? '' : $("input#floor").val() + '樓') +
+        ($("input#part").val() == '' ? '' : '之' + $("input#part").val());
+    $("span#sender_address").text(sender_address);
+}
+
+function form_data_change() {
+    data_validation();
+    update_envelope();
+}
+
 function create_data_binding() {
     copy_input_to_span("id")
     copy_input_to_span("year")
@@ -294,8 +317,8 @@ function create_data_binding() {
         change_topic($(this).val());
     })
 
-    $("div#form_table").change(data_validation)
-    $("div#form_table").keyup(data_validation)
+    $("div#form_table").change(form_data_change)
+    $("div#form_table").keyup(form_data_change)
 }
 
 function export_pdf() {
