@@ -82,14 +82,14 @@ div.input {
     display: flex;
     align-items: baseline;
     width: 160px;
-    padding: 6px;
+    padding: 4px 6px 4px 0px;
 }
 
 div.birthday {
     display: flex;
     align-items: baseline;
     width: 360px;
-    padding: 6px;
+    padding: 4px 6px 4px 0px;
 }
 
 div.location {
@@ -97,13 +97,28 @@ div.location {
     align-items: baseline;
     max-width: 1200px;
     flex-wrap: wrap;
+    padding-bottom: 6px;
+}
+
+div.location div {
+    display: flex;
+    align-items: baseline;
+    padding: 4px 6px 2px 0px;
+}
+
+div.subject {
+    display: flex;
+    align-items: baseline;
+}
+
+div.subject div {
+    padding: 4px 6px 2px 0px;
 }
 
 div.topic {
     display: flex;
     align-items: baseline;
-    width: 600px;
-    padding: 6px;
+    width: 480px;
 }
 
 div.input span, div.location span{
