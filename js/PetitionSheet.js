@@ -386,12 +386,39 @@ function export_pdf() {
     }
 
     html2canvas($("div#sheet"), {
-        onrendered: function(canvas) {
-            var sheet_img = canvas.toDataURL('image/png');
-            var pdf = new jsPDF('l', 'mm', 'a4');
-            pdf.addImage(sheet_img, 'PNG', 0, 0);
-            topic = $("select#topic option:selected").text();
-            pdf.save('公投連署書 - ' + topic + '.pdf');
+        useCORS: true,
+        allowTaint: true,
+        taintTest: false,
+        onrendered: function(sheet_canvas) {
+            var sheet_img = sheet_canvas.toDataURL('image/png');
+
+            html2canvas($("div#envelope"), {
+                useCORS: true,
+                allowTaint: true,
+                taintTest: false,
+                onrendered: function(envelope_canvas) {
+                    // Rotate envelop 90 degrees right.
+                    rotated_envelope_canvas = document.createElement('canvas');
+                    rotated_envelope_canvas.width = envelope_canvas.height;
+                    rotated_envelope_canvas.height = envelope_canvas.width;
+                    rotated_envelope_ctx = rotated_envelope_canvas.getContext('2d');
+                    rotated_envelope_ctx.rotate(90 * Math.PI / 180);
+                    rotated_envelope_ctx.drawImage(
+                        envelope_canvas,
+                        0,
+                        -envelope_canvas.height
+                    );
+                    var envelop_imge = rotated_envelope_canvas.toDataURL('image/png');
+
+                    var pdf = new jsPDF('l', 'pt', 'a4');
+                    pdf.addImage(sheet_img, 'PNG', 0, 0);
+                    pdf.addPage();
+                    pdf.addImage(envelop_imge, 'PNG', 0, 0);
+
+                    topic = $("select#topic option:selected").text();
+                    pdf.save('公投連署書 - ' + topic + '（請雙面列印）.pdf');
+                }
+            })
         }
     });
 }
