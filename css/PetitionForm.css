@@ -60,7 +60,7 @@ div.table {
     border-radius: 20px;
 }
 
-div.person {
+div.person, div.mail , div.subject {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
@@ -95,9 +95,8 @@ div.birthday {
 div.location {
     display: flex;
     align-items: baseline;
-    max-width: 1000px;
+    max-width: 1200px;
     flex-wrap: wrap;
-    padding: 6px;
 }
 
 div.topic {
