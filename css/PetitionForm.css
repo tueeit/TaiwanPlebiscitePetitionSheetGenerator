@@ -73,6 +73,13 @@ div.input {
     padding: 6px;
 }
 
+div.birthday {
+    display: flex;
+    align-items: baseline;
+    width: 360px;
+    padding: 6px;
+}
+
 div.location {
     display: flex;
     align-items: baseline;
