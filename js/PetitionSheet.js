@@ -153,7 +153,7 @@ function set_element_style(element, valid) {
     } else {
         element.css("border-style", "solid");
         element.css("border-width", "medium");
-        element.css("border-color", "red");
+        element.css("border-color", "#af191c");
     }
 }
 
