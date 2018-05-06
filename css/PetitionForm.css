@@ -7,7 +7,7 @@ div.pagehead {
     box-sizing: border-box;
     position: fixed;
     width: 100%;
-    background: rgba(230,230,230,0.92);
+    background: rgba(247,250,251,0.225);
     box-shadow: 0px 2px 10px rgba(0,0,0,.25);
     padding: 10px 20px 4px 20px;
     z-index: 2;
@@ -50,7 +50,7 @@ div.table {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background: rgba(230,230,230,0.92);
+    background: rgba(247,250,251,0.875);
     padding-bottom: 10px;
     border-bottom: 1px dashed #5c5c5c;
 }
@@ -114,7 +114,7 @@ div.footer {
     bottom: 0px;
     height: 40px;
     width: 100%;
-    background:rgba(233,233,235,0.87);
+    background:rgba(247,250,251,0.36);
     padding: 10px 20px;
     z-index: 2;
 }
@@ -141,7 +141,7 @@ div#note {
     z-index: 3;
     font-size: 12px;
     line-height: 1.4;
-    background: rgba(233,233,235,0.87);
+    background: rgba(247,250,251,0.64);
     padding: 1em;
     position: fixed;
     bottom: 8px;
