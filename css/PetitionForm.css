@@ -51,8 +51,9 @@ div.table {
     display: flex;
     flex-direction: column;
     background: rgba(247,250,251,0.875);
-    padding-bottom: 10px;
-    border-bottom: 1px dashed #5c5c5c;
+    padding: 10px;
+    border: 1px dashed #5c5c5c;
+    border-radius: 20px;
 }
 
 div.tr {
@@ -91,7 +92,7 @@ div.location {
 div.topic {
     display: flex;
     align-items: baseline;
-    width: 1000px;
+    width: 600px;
     padding: 6px;
 }
 
@@ -142,9 +143,9 @@ div#note {
     font-size: 12px;
     line-height: 1.4;
     background: rgba(247,250,251,0.64);
-    padding: 1em;
+    padding: 1em 1em 1.75em;
     position: fixed;
-    bottom: 8px;
+    bottom: 0px;
     right: 0px;
     width: 320px;
     border-top-left-radius: 20px;
