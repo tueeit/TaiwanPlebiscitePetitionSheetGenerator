@@ -114,3 +114,16 @@ span#receiver_name {
     left: 0px;
     top: 100px;
 }
+
+span#steps {
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    left: 50px;
+    top: 50px;
+}
+
+span.important {
+    font-weight: bold;
+    text-decoration: underline;
+}
