@@ -16,48 +16,63 @@
 <body>
     <div class="pagehead">
         <div class="table" id="form_table">
-            <div class="tr person">
-                <div class="label">
-                    <label>姓名</label>
+            <div class="person">
+                <div class='personal-info'>
+                    <div class="label">
+                        <label>姓名</label>
+                    </div>
+                    <div class="input">
+                        <input class="name" type="text" name="name" id="name" placeholder="姓名">
+                    </div>
                 </div>
-                <div class="input">
-                    <input class="name" type="text" name="name" id="name" placeholder="姓名">
+
+                <div class='personal-info' >
+                    <div class="label">
+                        <label>身份證字號</label>
+                    </div>
+                    <div class="input">
+                            <input class="id" type="text" name="id" id="id" maxlength="10" placeholder="身份證字號">
+                    </div>
                 </div>
-                <div class="label">
-                    <label>身份證字號</label>
+
+                <div class='personal-info' >
+                    <div class="label">
+                        <label>生日</label>
+                    </div>
+                    <div class="birthday">
+                        <input class="birthday" type="text" name="year" id="year" maxlength="4" placeholder="西元年"><span>-</span>
+                        <input class="birthday" type="text" name="month" id="month" maxlength="2" placeholder="月"><span>-</span>
+                        <input class="birthday" type="text" name="date" id="date" maxlength="2" placeholder="日">
+                    </div>
                 </div>
-                <div class="input">
-                    <input class="id" type="text" name="id" id="id" maxlength="10" placeholder="身份證字號">
-                </div>
-                <div class="label">
-                    <label>生日</label>
-                </div>
-                <div class="birthday">
-                    <input class="birthday" type="text" name="year" id="year" maxlength="4" placeholder="西元年"><span>-</span>
-                    <input class="birthday" type="text" name="month" id="month" maxlength="2" placeholder="月"><span>-</span>
-                    <input class="birthday" type="text" name="date" id="date" maxlength="2" placeholder="日">
-                </div>
+
             </div>
-            <div class="tr mail">
+            <div class="location" id="address">
                 <div class="label">
                     <label>地址</label>
                 </div>
-                <div class="location" id="address">
-                    <select class="county" id="county"></select>&nbsp;
-                    <select class="district" id="district"></select>&nbsp;
-                    <input class="address" type="text" name="village" id="village" placeholder="村/里">
-                    <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰"><span>鄰</span>
-                    <input class="address" type="text" name="road" id="road" placeholder="路/街">
-                    <input class="address" type="text" name="section" id="section" placeholder="段"><span>段</span>
-                    <input class="address" type="text" name="lane" id="lane" placeholder="巷"><span>巷</span>
-                    <input class="address" type="text" name="alley" id="alley" placeholder="弄"><span>弄</span>
-                    <input class="address" type="text" name="number" id="number" placeholder="號"><span>號</span>
-                    <input class="address" type="text" name="floor" id="floor" placeholder="樓"><span>樓之</span>
-                    <input class="address" type="text" name="part" id="part" placeholder="">
-                    <input type="hidden" id="zipcode">
+                <div class="address">
+                    <div>
+                        <select class="county" id="county"></select>&nbsp;
+                        <select class="district" id="district"></select>&nbsp;
+                        <input class="address" type="text" name="village" id="village" placeholder="村/里">
+                        <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰"><span>鄰</span>
+                    </div>
+                    <div>
+                        <input class="address" type="text" name="road" id="road" placeholder="路/街">
+                        <input class="address" type="text" name="section" id="section" placeholder="段"><span>段</span>
+                        <input class="address" type="text" name="lane" id="lane" placeholder="巷"><span>巷</span>
+                        <input class="address" type="text" name="alley" id="alley" placeholder="弄"><span>弄</span>
+                    </div>
+                    <div>
+                        <input class="address" type="text" name="number" id="number" placeholder="號"><span>號</span>
+                        <input class="address" type="text" name="floor" id="floor" placeholder="樓"><span>樓之</span>
+                        <input class="address" type="text" name="part" id="part" placeholder="房/室">
+                        <input type="hidden" id="zipcode">
+                    </div>
                 </div>
             </div>
-            <div class="tr subject">
+            <div class="subject">
                 <div class="label">
                     <label>連署題目</label>
                 </div>
@@ -107,29 +122,29 @@
         </div>
 
         <br />
-
-        <div class="envelope" id="envelope">
-            <div class="envelope_top" id="envelope_top">
-            </div>
-            <div class="envelope_middle" id="envelope_middle">
-                <div class="sender" id="sender">
-                    <span id="sender_zipcode"></span>
-                    <span id="sender_address"></span>
-                    <span id="sender_name"></span>
+        <div class="evelope-wrapper">
+            <div class="envelope" id="envelope">
+                <div class="envelope_top" id="envelope_top">
                 </div>
-                <div class="stamp" id="stamp">
-                    <span id="stamp">請貼郵票</span>
+                <div class="envelope_middle" id="envelope_middle">
+                    <div class="sender" id="sender">
+                        <span id="sender_zipcode"></span>
+                        <span id="sender_address"></span>
+                        <span id="sender_name"></span>
+                    </div>
+                    <div class="stamp" id="stamp">
+                        <span id="stamp">請貼郵票</span>
+                    </div>
+                    <div class="receiver" id="receiver">
+                        <span id="receiver_zipcode"></span>
+                        <span id="receiver_address"></span>
+                        <span id="receiver_name"></span>
+                    </div>
                 </div>
-                <div class="receiver" id="receiver">
-                    <span id="receiver_zipcode"></span>
-                    <span id="receiver_address"></span>
-                    <span id="receiver_name"></span>
+                <div class="envelope_bottom" id="envelope_bottom">
                 </div>
-            </div>
-            <div class="envelope_bottom" id="envelope_bottom">
-            </div>
         </div>
-
+        </div>
     </div>
     <div class="footer">
         <button id="export_pdf">輸出PDF</button>

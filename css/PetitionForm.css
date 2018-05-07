@@ -3,11 +3,15 @@ body {
     margin: 0px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 div.pagehead {
     box-sizing: border-box;
     position: fixed;
     width: 100%;
-    background: rgba(230,230,230,0.92);
+    background: rgba(247,250,251,0.64);
     box-shadow: 0px 2px 10px rgba(0,0,0,.25);
     padding: 10px 20px 4px 20px;
     z-index: 2;
@@ -21,78 +25,110 @@ div.pagehead h3 {
 
 input {
     letter-spacing: 1px;
-    height: 24px;
+    height: 32px;
     padding:  0em 0.5em;
-    border: 1px solid #dcdcdc;
+    border: medium solid #b0b8ba;
     border-radius: 4px;
     margin: 2px 1px;
 }
 
+input:focus {
+    background:#f5da84;
+}
+
 select {
     letter-spacing: 1px;
-    height: 24px;
+    height: 32px;
     padding:  0em 0.5em;
+    border: medium solid #b0b8ba;
 }
 
 input.name, input.id {
-    width: 100px;
+    width: 120px;
 }
 
 input.birthday {
-    width: 60px;
+    width: 80px;
 }
 
 input.address {
-    width: 60px;
+    width: 80px;
 }
 
 div.table {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background: rgba(230,230,230,0.92);
-    padding-bottom: 10px;
-    border-bottom: 1px dashed #5c5c5c;
+    background: rgba(247,250,251,0.95);
+    padding: 10px 20px;
+    border: 1px dashed #5c5c5c;
+    border-radius: 20px;
 }
 
-div.tr {
+div.person, div.mail , div.subject {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+div.person div {
     display: flex;
     align-items: baseline;
 }
 
+
 div.label {
     display: flex;
-    min-width: 3em;
+    min-width: 6.25em;
     letter-spacing: 1px;
 }
 
 div.input {
     display: flex;
     align-items: baseline;
-    width: 120px;
-    padding: 6px;
+    width: 160px;
+    padding: 4px 6px 4px 0px;
 }
 
 div.birthday {
     display: flex;
     align-items: baseline;
     width: 360px;
-    padding: 6px;
+    padding: 4px 6px 4px 0px;
 }
 
 div.location {
     display: flex;
     align-items: baseline;
-    width: 1000px;
+}
+
+div.location div.address {
+    display: flex;
+    align-items: baseline;
+    max-width: 1200px;
     flex-wrap: wrap;
-    padding: 6px;
+    padding-bottom: 6px;
+}
+
+div.location  div.address div {
+    display: flex;
+    align-items: baseline;
+    padding: 4px 6px 2px 0px;
+}
+
+div.subject {
+    display: flex;
+    align-items: baseline;
+}
+
+div.subject div {
+    padding: 4px 6px 2px 0px;
 }
 
 div.topic {
     display: flex;
     align-items: baseline;
-    width: 1000px;
-    padding: 6px;
+    width: 480px;
 }
 
 div.input span, div.location span{
@@ -101,7 +137,7 @@ div.input span, div.location span{
 }
 
 div.preview {
-    padding-top: 140px;
+    padding-top: 160px;
     padding-bottom: 40px;
     height: calc(100% - 180px);
     overflow: scroll;
@@ -109,12 +145,34 @@ div.preview {
     background: gray;
 }
 
+@media (max-width: 1050px) {
+    div.preview {
+        padding-top: 240px;
+        height: calc(100% - 280px);
+    }
+ }
+
+ @media (max-width: 860px) {
+    div.preview {
+        padding-top: 280px;
+        height: calc(100% - 320px);
+    }
+ }
+
+ @media (max-width: 640px) {
+    div.preview {
+        padding-top: 360px;
+        height: calc(100% - 400px);
+    }
+ }
+
 div.footer {
     position: fixed;
     bottom: 0px;
-    height: 40px;
+    height: 60px;
     width: 100%;
-    background:rgba(233,233,235,0.87);
+    background:rgba(247,250,251,0.95);
+    box-shadow:0px -2px 10px rgba(0,0,0,.25);
     padding: 10px 20px;
     z-index: 2;
 }
@@ -128,7 +186,7 @@ div.footer button {
     margin-right: auto;
     cursor: pointer;
     color: white;
-    background: #ff3366;
+    background: #af191c;
 }
 
 div.footer button:hover {
@@ -141,13 +199,13 @@ div#note {
     z-index: 3;
     font-size: 12px;
     line-height: 1.4;
-    background: rgba(233,233,235,0.87);
-    padding: 1em;
+    background: rgba(247,250,251,0.64);
+    padding: 1em 1em 1.92em;
     position: fixed;
-    bottom: 8px;
+    bottom: 0px;
     right: 0px;
-    width: 320px;
-    border-top-left-radius: 20px;
+    width: 360px;
+    border-top-left-radius: 1em;
 }
 
 div#note ul {
@@ -159,5 +217,10 @@ div#note ul {
 }
 
 div#note a {
+    color: #1474b6;
     font-weight: bold;
+}
+
+div#note a:hover {
+    color: #44b4ec;
 }

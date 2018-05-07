@@ -1,3 +1,7 @@
+div.evelope-wrapper {
+    padding:  10px 32px;
+}
+
 div.envelope {
     background: white;
     position: relative;
