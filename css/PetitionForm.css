@@ -89,6 +89,7 @@ div.person div {
 
 div.label {
     display: flex;
+    font-size: 16px;
     min-width: 6.25em;
     letter-spacing: 1px;
 }
@@ -114,6 +115,10 @@ div.location {
 
 div.location div.label {
     flex-direction: column;
+}
+
+div.location div.label span {
+    font-size: 12px;
 }
 
 div.location div.address {
