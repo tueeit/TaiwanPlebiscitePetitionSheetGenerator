@@ -132,13 +132,34 @@ div.input span, div.location span{
 }
 
 div.preview {
-    padding-top: 140px;
+    padding-top: 164px;
     padding-bottom: 40px;
-    height: calc(100% - 180px);
+    height: calc(100% - 184px);
     overflow: scroll;
     z-index: -1;
     background: gray;
 }
+
+@media (max-width: 1050px) {
+    div.preview {
+        padding-top: 240px;
+        height: calc(100% - 280px);
+    }
+ }
+
+ @media (max-width: 860px) {
+    div.preview {
+        padding-top: 280px;
+        height: calc(100% - 320px);
+    }
+ }
+
+ @media (max-width: 640px) {
+    div.preview {
+        padding-top: 360px;
+        height: calc(100% - 400px);
+    }
+ }
 
 div.footer {
     position: fixed;
