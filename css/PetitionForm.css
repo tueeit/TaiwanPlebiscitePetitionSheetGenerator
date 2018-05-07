@@ -1,4 +1,5 @@
 body {
+    background: gray;
     padding: 0px;
     margin: 0px;
 }
@@ -162,6 +163,7 @@ div.preview {
     overflow: scroll;
     z-index: -1;
     background: gray;
+    width: 1280px;
 }
 
 @media (max-width: 1050px) {
@@ -175,6 +177,7 @@ div.preview {
     div.preview {
         padding-top: 280px;
         height: calc(100% - 320px);
+        width: 200%;
     }
  }
 
