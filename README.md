@@ -31,6 +31,7 @@
 - Windows 8 + IE 11
 - Windows 8 + Firefox 59.0.3
 - Windows 8 + Chrome 66.0.3359.139
+- Win 10 + Edge 41.16299.371.0
 - Mac OS + Safari
 
 ## 授權
