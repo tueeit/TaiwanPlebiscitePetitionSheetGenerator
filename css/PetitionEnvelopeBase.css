@@ -127,3 +127,24 @@ span.important {
     font-weight: bold;
     text-decoration: underline;
 }
+
+span.center {
+    width: 100%;
+    text-align: center;
+}
+
+span.bottom {
+    position: absolute;
+    bottom: 0px;
+}
+
+span.top {
+    position: absolute;
+    top: 0px;
+}
+
+span.fold_notice {
+    font-weight: bold;
+    font-size: 14px;
+    height: 20px;
+}
