@@ -1,172 +1,174 @@
 <!DOCTYPE html>
-<head>
-    <title>公投連署大平台</title>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/PetitionSheetBase.css">
-    <link rel="stylesheet" type="text/css" href="css/PetitionEnvelopeBase.css">
-    <link rel="stylesheet" type="text/css" href="css/PetitionForm.css">
-    <link id="petition_topic_css" rel="stylesheet" type="text/css" href="">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="js/tw-city-selector.min.js"></script>
-    <script src="js/PetitionSheet.js"></script>
-</head>
-<body>
-    <div class="pagehead">
-        <div class="table" id="form_table">
-            <div class="person">
-                <div class='personal-info'>
+<html>
+    <head>
+        <title>公投連署大平台</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/PetitionSheetBase.css">
+        <link rel="stylesheet" type="text/css" href="css/PetitionEnvelopeBase.css">
+        <link rel="stylesheet" type="text/css" href="css/PetitionForm.css">
+        <link id="petition_topic_css" rel="stylesheet" type="text/css" href="">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+        <script src="js/tw-city-selector.min.js"></script>
+        <script src="js/PetitionSheet.js"></script>
+    </head>
+    <body>
+        <div class="pagehead">
+            <div class="table" id="form_table">
+                <div class="person">
+                    <div class='personal-info'>
+                        <div class="label">
+                            <label>姓名</label>
+                        </div>
+                        <div class="input">
+                            <input class="name" type="text" name="name" id="name" placeholder="姓名">
+                        </div>
+                    </div>
+
+                    <div class='personal-info' >
+                        <div class="label">
+                            <label>身份證字號</label>
+                        </div>
+                        <div class="input">
+                                <input class="id" type="text" name="id" id="id" maxlength="10" placeholder="身份證字號">
+                        </div>
+                    </div>
+
+                    <div class='personal-info' >
+                        <div class="label">
+                            <label>生日</label>
+                        </div>
+                        <div class="birthday">
+                            <input class="birthday" type="text" name="year" id="year" maxlength="4" placeholder="西元年"><span>-</span>
+                            <input class="birthday" type="text" name="month" id="month" maxlength="2" placeholder="月"><span>-</span>
+                            <input class="birthday" type="text" name="date" id="date" maxlength="2" placeholder="日">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="location" id="address">
                     <div class="label">
-                        <label>姓名</label>
+                        <label>地址</label>
+                        <span>(<a href="https://www.ris.gov.tw/doorplateX/map?searchType=doorplate" target="_blank" >里鄰查詢</a>)</span>
                     </div>
-                    <div class="input">
-                        <input class="name" type="text" name="name" id="name" placeholder="姓名">
+                    <div class="address">
+                        <div>
+                            <select class="county" id="county"></select>&nbsp;
+                            <select class="district" id="district"></select>&nbsp;
+                            <input class="address" type="text" name="village" id="village" placeholder="村/里">
+                            <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰"><span>鄰</span>
+                        </div>
+                        <div>
+                            <input class="address" type="text" name="road" id="road" placeholder="路/街">
+                            <input class="address" type="text" name="section" id="section" placeholder="段"><span>段</span>
+                            <input class="address" type="text" name="lane" id="lane" placeholder="巷"><span>巷</span>
+                            <input class="address" type="text" name="alley" id="alley" placeholder="弄"><span>弄</span>
+                        </div>
+                        <div>
+                            <input class="address" type="text" name="number" id="number" placeholder="號"><span>號</span>
+                            <input class="address" type="text" name="floor" id="floor" placeholder="樓"><span>樓之</span>
+                            <input class="address" type="text" name="part" id="part" placeholder="房/室">
+                            <input type="hidden" id="zipcode">
+                        </div>
                     </div>
                 </div>
-
-                <div class='personal-info' >
+                <div class="subject">
                     <div class="label">
-                        <label>身份證字號</label>
+                        <label>連署題目</label>
                     </div>
-                    <div class="input">
-                            <input class="id" type="text" name="id" id="id" maxlength="10" placeholder="身份證字號">
-                    </div>
-                </div>
-
-                <div class='personal-info' >
-                    <div class="label">
-                        <label>生日</label>
-                    </div>
-                    <div class="birthday">
-                        <input class="birthday" type="text" name="year" id="year" maxlength="4" placeholder="西元年"><span>-</span>
-                        <input class="birthday" type="text" name="month" id="month" maxlength="2" placeholder="月"><span>-</span>
-                        <input class="birthday" type="text" name="date" id="date" maxlength="2" placeholder="日">
-                    </div>
-                </div>
-
-            </div>
-            <div class="location" id="address">
-                <div class="label">
-                    <label>地址</label>
-                    <span>(<a href="https://www.ris.gov.tw/doorplateX/map?searchType=doorplate" target="_blank" >里鄰查詢</a>)</span>
-                </div>
-                <div class="address">
-                    <div>
-                        <select class="county" id="county"></select>&nbsp;
-                        <select class="district" id="district"></select>&nbsp;
-                        <input class="address" type="text" name="village" id="village" placeholder="村/里">
-                        <input class="address" type="text" name="neighbor" id="neighbor" placeholder="鄰"><span>鄰</span>
-                    </div>
-                    <div>
-                        <input class="address" type="text" name="road" id="road" placeholder="路/街">
-                        <input class="address" type="text" name="section" id="section" placeholder="段"><span>段</span>
-                        <input class="address" type="text" name="lane" id="lane" placeholder="巷"><span>巷</span>
-                        <input class="address" type="text" name="alley" id="alley" placeholder="弄"><span>弄</span>
-                    </div>
-                    <div>
-                        <input class="address" type="text" name="number" id="number" placeholder="號"><span>號</span>
-                        <input class="address" type="text" name="floor" id="floor" placeholder="樓"><span>樓之</span>
-                        <input class="address" type="text" name="part" id="part" placeholder="房/室">
-                        <input type="hidden" id="zipcode">
+                    <div class="topic">
+                        <select class="topic" name="topic" id="topic">
+                            <option value="ReferendumLaborLaw20180131">廢止民國107年1月31日公佈之「勞動基準法修訂條文」</option>
+                            <option value="InitiativeNationalHolidayLaw">制定「國定假日法」</option>
+                        </select>
                     </div>
                 </div>
             </div>
-            <div class="subject">
-                <div class="label">
-                    <label>連署題目</label>
-                </div>
-                <div class="topic">
-                    <select class="topic" name="topic" id="topic">
-                        <option value="ReferendumLaborLaw20180131">廢止民國107年1月31日公佈之「勞動基準法修訂條文」</option>
-                        <option value="InitiativeNationalHolidayLaw">制定「國定假日法」</option>
-                    </select>
-                </div>
+            <h3>連署書預覽</h3>
+
+        </div>
+
+        <div class="preview">
+
+            <div class="sheet" id="sheet">
+                <div class="id"><span id="id"></span></div>
+                <div class="year"><span id="year"></span></div>
+                <div class="month"><span id="month"></span></div>
+                <div class="date"><span id="date"></span></div>
+                <div class="province"><span id="province"></span></div>
+                <div class="province_1_circle circle">◯</div>
+                <div class="province_2_circle circle">◯</div>
+                <div class="county"><span id="county"></span></div>
+                <div class="county_1_circle circle">◯</div>
+                <div class="county_2_circle circle">◯</div>
+                <div class="district"><span id="district"></span></div>
+                <div class="district_1_circle circle">◯</div>
+                <div class="district_2_circle circle">◯</div>
+                <div class="district_3_circle circle">◯</div>
+                <div class="district_4_circle circle">◯</div>
+                <div class="village"><span id="village"></span></div>
+                <div class="village_1_circle circle">◯</div>
+                <div class="village_2_circle circle">◯</div>
+                <div class="neighbor"><span id="neighbor"></span></div>
+                <div class="road"><span id="road"></span></div>
+                <div class="road_1_circle circle">◯</div>
+                <div class="road_2_circle circle">◯</div>
+                <div class="section"><span id="section"></span></div>
+                <div class="lane"><span id="lane"></div>
+                <div class="alley"><span id="alley"></div>
+                <div class="number"><span id="number"></div>
+                <div class="floor"><span id="floor"></div>
+                <div class="part"><span id="part"></span></div>
+            </div>
+
+            <br />
+            <div class="evelope-wrapper">
+                <div class="envelope" id="envelope">
+                    <div class="envelope_top" id="envelope_top">
+                        <span class="steps" id="steps">
+                            連署步驟：
+                            <ul>
+                                <li>在連署人欄親筆簽名或蓋章。</li>
+                                <li>依本面黑線向後折，使連署書朝內，信封朝外。</li>
+                                <li>以<span class="important">膠帶</span>由<span class="important">外側</span>封口，貼上郵票（8元）後寄出。
+                                    <br>*請勿使用膠水以免損毀連署書。</li>
+                            </ul>
+                        </span>
+                        <span class="bottom center fold_notice">(將線以上部份向後折)</span>
+                    </div>
+                    <div class="envelope_middle" id="envelope_middle">
+                        <div class="sender" id="sender">
+                            <span id="sender_zipcode"></span>
+                            <span id="sender_address"></span>
+                            <span id="sender_name"></span>
+                        </div>
+                        <div class="stamp" id="stamp">
+                            <span id="stamp">請貼郵票</span>
+                        </div>
+                        <div class="receiver" id="receiver">
+                            <span id="receiver_zipcode"></span>
+                            <span id="receiver_address"></span>
+                            <span id="receiver_name"></span>
+                        </div>
+                    </div>
+                    <div class="envelope_bottom" id="envelope_bottom">
+                        <span class="top center fold_notice">(將線以下部份向後折)</span>
+                    </div>
+            </div>
             </div>
         </div>
-        <h3>連署書預覽</h3>
-
-    </div>
-
-    <div class="preview">
-
-        <div class="sheet" id="sheet">
-            <div class="id"><span id="id"></span></div>
-            <div class="year"><span id="year"></span></div>
-            <div class="month"><span id="month"></span></div>
-            <div class="date"><span id="date"></span></div>
-            <div class="province"><span id="province"></span></div>
-            <div class="province_1_circle circle">◯</div>
-            <div class="province_2_circle circle">◯</div>
-            <div class="county"><span id="county"></span></div>
-            <div class="county_1_circle circle">◯</div>
-            <div class="county_2_circle circle">◯</div>
-            <div class="district"><span id="district"></span></div>
-            <div class="district_1_circle circle">◯</div>
-            <div class="district_2_circle circle">◯</div>
-            <div class="district_3_circle circle">◯</div>
-            <div class="district_4_circle circle">◯</div>
-            <div class="village"><span id="village"></span></div>
-            <div class="village_1_circle circle">◯</div>
-            <div class="village_2_circle circle">◯</div>
-            <div class="neighbor"><span id="neighbor"></span></div>
-            <div class="road"><span id="road"></span></div>
-            <div class="road_1_circle circle">◯</div>
-            <div class="road_2_circle circle">◯</div>
-            <div class="section"><span id="section"></span></div>
-            <div class="lane"><span id="lane"></div>
-            <div class="alley"><span id="alley"></div>
-            <div class="number"><span id="number"></div>
-            <div class="floor"><span id="floor"></div>
-            <div class="part"><span id="part"></span></div>
+        <div class="footer">
+            <button id="export_pdf">輸出PDF</button>
         </div>
-
-        <br />
-        <div class="evelope-wrapper">
-            <div class="envelope" id="envelope">
-                <div class="envelope_top" id="envelope_top">
-                    <span class="steps" id="steps">
-                        連署步驟：
-                        <ul>
-                            <li>在連署人欄親筆簽名或蓋章。</li>
-                            <li>依本面黑線向後折，使連署書朝內，信封朝外。</li>
-                            <li>以<span class="important">膠帶</span>由<span class="important">外側</span>封口，貼上郵票（8元）後寄出。
-                                <br>*請勿使用膠水以免損毀連署書。</li>
-                        </ul>
-                    </span>
-                    <span class="bottom center fold_notice">(將線以上部份向後折)</span>
-                </div>
-                <div class="envelope_middle" id="envelope_middle">
-                    <div class="sender" id="sender">
-                        <span id="sender_zipcode"></span>
-                        <span id="sender_address"></span>
-                        <span id="sender_name"></span>
-                    </div>
-                    <div class="stamp" id="stamp">
-                        <span id="stamp">請貼郵票</span>
-                    </div>
-                    <div class="receiver" id="receiver">
-                        <span id="receiver_zipcode"></span>
-                        <span id="receiver_address"></span>
-                        <span id="receiver_name"></span>
-                    </div>
-                </div>
-                <div class="envelope_bottom" id="envelope_bottom">
-                    <span class="top center fold_notice">(將線以下部份向後折)</span>
-                </div>
+        <div id="note">
+            說明：
+            <ul>
+                <li>輸出pdf前請在預覽中確認資料及格式正確無誤，遇到任何問題歡迎到<a href="https://www.facebook.com/TUEEIT/">FB專頁</a>或<a href="mailto:tueeit+petition@gmail.com">來信</a>回報，我們會盡快處理。</li>
+                <li>所有個人資訊只在輸出連署書時一次性使用，本工具不會蒐集、紀錄。</li>
+                <li>本工具由<a href="http://www.tueeit.org.tw/">電資工會</a>開發，並<a href="https://github.com/tueeit/TaiwanPlebiscitePetitionSheetGenerator/">開放原始碼</a>，歡迎重用或協助我們讓它變得更好。</li>
+            </ul>
         </div>
-        </div>
-    </div>
-    <div class="footer">
-        <button id="export_pdf">輸出PDF</button>
-    </div>
-    <div id="note">
-        說明：
-        <ul>
-            <li>輸出pdf前請在預覽中確認資料及格式正確無誤，遇到任何問題歡迎到<a href="https://www.facebook.com/TUEEIT/">FB專頁</a>或<a href="mailto:tueeit+petition@gmail.com">來信</a>回報，我們會盡快處理。</li>
-            <li>所有個人資訊只在輸出連署書時一次性使用，本工具不會蒐集、紀錄。</li>
-            <li>本工具由<a href="http://www.tueeit.org.tw/">電資工會</a>開發，並<a href="https://github.com/tueeit/TaiwanPlebiscitePetitionSheetGenerator/">開放原始碼</a>，歡迎重用或協助我們讓它變得更好。</li>
-        </ul>
-    </div>
-</body>
+    </body>
+</html>
