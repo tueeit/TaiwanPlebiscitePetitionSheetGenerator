@@ -1,4 +1,5 @@
 body {
+    background: gray;
     padding: 0px;
     margin: 0px;
 }
@@ -6,6 +7,17 @@ body {
 * {
     box-sizing: border-box;
 }
+
+
+a {
+    color: #1474b6;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #44b4ec;
+}
+
 
 div.pagehead {
     box-sizing: border-box;
@@ -56,7 +68,6 @@ input.address {
 }
 
 div.table {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     background: rgba(247,250,251,0.95);
@@ -79,6 +90,7 @@ div.person div {
 
 div.label {
     display: flex;
+    font-size: 16px;
     min-width: 6.25em;
     letter-spacing: 1px;
 }
@@ -100,6 +112,14 @@ div.birthday {
 div.location {
     display: flex;
     align-items: baseline;
+}
+
+div.location div.label {
+    flex-direction: column;
+}
+
+div.location div.label span {
+    font-size: 12px;
 }
 
 div.location div.address {
@@ -143,6 +163,7 @@ div.preview {
     overflow: scroll;
     z-index: -1;
     background: gray;
+    width: 1280px;
 }
 
 @media (max-width: 1050px) {
@@ -156,6 +177,7 @@ div.preview {
     div.preview {
         padding-top: 280px;
         height: calc(100% - 320px);
+        width: 200%;
     }
  }
 
@@ -214,13 +236,4 @@ div#note ul {
     padding: 0px 0px 0px 10px;
     list-style-type: none;
     line-height: 1.5;
-}
-
-div#note a {
-    color: #1474b6;
-    font-weight: bold;
-}
-
-div#note a:hover {
-    color: #44b4ec;
 }
