@@ -74,7 +74,7 @@ div.person div {
 
 div.label {
     display: flex;
-    min-width: 3em;
+    min-width: 6.25em;
     letter-spacing: 1px;
 }
 
@@ -95,12 +95,17 @@ div.birthday {
 div.location {
     display: flex;
     align-items: baseline;
+}
+
+div.location div.address {
+    display: flex;
+    align-items: baseline;
     max-width: 1200px;
     flex-wrap: wrap;
     padding-bottom: 6px;
 }
 
-div.location div {
+div.location  div.address div {
     display: flex;
     align-items: baseline;
     padding: 4px 6px 2px 0px;
