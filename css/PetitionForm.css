@@ -67,7 +67,6 @@ input.address {
 }
 
 div.table {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     background: rgba(247,250,251,0.95);
