@@ -7,6 +7,17 @@ body {
     box-sizing: border-box;
 }
 
+
+a {
+    color: #1474b6;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #44b4ec;
+}
+
+
 div.pagehead {
     box-sizing: border-box;
     position: fixed;
@@ -218,13 +229,4 @@ div#note ul {
     padding: 0px 0px 0px 10px;
     list-style-type: none;
     line-height: 1.5;
-}
-
-div#note a {
-    color: #1474b6;
-    font-weight: bold;
-}
-
-div#note a:hover {
-    color: #44b4ec;
 }
