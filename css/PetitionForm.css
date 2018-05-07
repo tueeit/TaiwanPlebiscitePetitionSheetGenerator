@@ -132,9 +132,9 @@ div.input span, div.location span{
 }
 
 div.preview {
-    padding-top: 164px;
+    padding-top: 160px;
     padding-bottom: 40px;
-    height: calc(100% - 184px);
+    height: calc(100% - 180px);
     overflow: scroll;
     z-index: -1;
     background: gray;
