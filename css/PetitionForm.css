@@ -32,6 +32,10 @@ input {
     margin: 2px 1px;
 }
 
+input:focus {
+    background:#edb917;
+}
+
 select {
     letter-spacing: 1px;
     height: 32px;
