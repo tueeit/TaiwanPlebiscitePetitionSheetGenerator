@@ -102,6 +102,10 @@ div.location {
     align-items: baseline;
 }
 
+div.location div.label {
+    flex-direction: column;
+}
+
 div.location div.address {
     display: flex;
     align-items: baseline;
