@@ -21,11 +21,20 @@
 
 ## 相容性
 目前確認能在以下環境運作正常：
+- Windows 7 Pro SP 1 + IE 11
+- Windows 7 Pro SP 1 + Firefox 60.0
 - Windows 8 + IE 11
 - Windows 8 + Firefox 59.0.3
 - Windows 8 + Chrome 66.0.3359.139
 - Win 10 + Edge 41.16299.371.0
 - Mac OS + Safari
+- Android 8.0.0 + Chrome 66.0.3359.139
+
+目前確認在以下環境運作異常：
+- Windows 7 Pro SP 1 + Chrome 66.0.3359.158  
+省市、縣市、鄉鎮市區、村里及路街等圈選格偏移。
+- Android 8.0.0 + Firefox 59.0.2  
+身份證字號偏移。
 
 ## 授權
 本程式由[電資工會](http://www.tueeit.org.tw/)開發維護，
