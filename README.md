@@ -47,17 +47,19 @@
 但電資工會無法保證其他基於本程式的衍生程式不會自行添加蒐集行為。
 
 ## 使用說明
-如果要在程式中新增公投連署項目，可依照下列步驟執行（需具備處理HTML、CSS能力），以`制定國定假日法`為例：
-1. 為公投連署決定一個英文名字，並在`topic`目錄底下以這個名字建立子目錄（以下稱為**公投案目錄**）。
+如果要在程式中新增公投連署項目，可依照下列步驟執行（需具備處理HTML、CSS、Javascript能力），以`制定國定假日法`為例：
+1. 修改[`js/PetitionSheet.js`](https://github.com/tueeit/TaiwanPlebiscitePetitionSheetGenerator/blob/master/js/PetitionSheet.js#L294)中定義的連署書收件人姓名、地址及郵遞區號。
+2. 清空`topic`資料。
+3. 為公投連署決定一個英文名字，並在`topic`目錄底下以這個名字建立子目錄（以下稱為**公投案目錄**）。
 我們將`制定國定假日法`取名為`InitiativeNationalHolidayLaw`，
 並建立[`topic/InitiativeNationalHolidayLaw`](https://github.com/tueeit/TaiwanPlebiscitePetitionSheetGenerator/tree/master/topic/InitiativeNationalHolidayLaw)。
-2. 將連署書掃描為圖檔，放入**公投案目錄**。
+4. 將連署書掃描為圖檔，放入**公投案目錄**。
 例如[`topic/InitiativeNationalHolidayLaw/PetitionSheet.jpg`](https://github.com/tueeit/TaiwanPlebiscitePetitionSheetGenerator/blob/master/topic/InitiativeNationalHolidayLaw/PetitionSheet.jpg)
-3. 在**公投案目錄**底下建立`PetitionSheet.css`，用來描述連署書圖檔位置，及各填寫欄位的位置。
+5. 在**公投案目錄**底下建立`PetitionSheet.css`，用來描述連署書圖檔位置，及各填寫欄位的位置。
 可參考[`topic/InitiativeNationalHolidayLaw/PetitionSheet.css`](https://github.com/tueeit/TaiwanPlebiscitePetitionSheetGenerator/blob/master/topic/InitiativeNationalHolidayLaw/PetitionSheet.css)
-4. 修改`index.html`，將公投連署中英文名字加入`select#topic`的option中。
+6. 修改`index.html`，將公投連署中英文名字加入`select#topic`的option中。
 例如制定國定假日法的[option](https://github.com/tueeit/TaiwanPlebiscitePetitionSheetGenerator/blob/master/index.html#L67)
-5. 利用預覽功能微調步驟3中描述的各欄位位置。
+7. 利用預覽功能微調步驟3中描述的各欄位位置。
 目前沒有專用的工具，建議利用瀏覽器的元件檢測功能。
 
 ## 致謝
