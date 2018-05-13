@@ -236,17 +236,17 @@ function data_validation() {
     set_element_style(element, valid);
     result = result & valid;
 
+    element = $("input#name");
+    valid = element.val() != "";
+    set_element_style(element, valid);
+    result = result & valid;
+
     element = $("input#village");
     valid = element.val() != "";
     set_element_style(element, valid);
     result = result & valid;
 
     element = $("input#neighbor");
-    valid = element.val() != "";
-    set_element_style(element, valid);
-    result = result & valid;
-
-    element = $("input#road");
     valid = element.val() != "";
     set_element_style(element, valid);
     result = result & valid;
