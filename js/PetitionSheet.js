@@ -158,7 +158,7 @@ function set_element_style(element, valid) {
 }
 
 function id_validation(id) {
-    id_regexp = new RegExp('^[A-Z][01][0-9]{8}$');
+    id_regexp = new RegExp('^[A-Z][12][0-9]{8}$');
     if (!id_regexp.test(id)) {
         return false;
     }
