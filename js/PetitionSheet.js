@@ -390,7 +390,7 @@ function export_pdf() {
         allowTaint: true,
         taintTest: false,
         onrendered: function(sheet_canvas) {
-            var sheet_img = sheet_canvas.toDataURL('image/png');
+            var sheet_img = sheet_canvas.toDataURL('image/jpeg', 1.0);
 
             html2canvas($("div#envelope"), {
                 useCORS: true,
@@ -408,12 +408,12 @@ function export_pdf() {
                         0,
                         -envelope_canvas.height
                     );
-                    var envelop_imge = rotated_envelope_canvas.toDataURL('image/png');
+                    var envelop_imge = rotated_envelope_canvas.toDataURL('image/jpeg', 1.0);
 
                     var pdf = new jsPDF('l', 'pt', 'a4');
-                    pdf.addImage(sheet_img, 'PNG', 0, 0);
+                    pdf.addImage(sheet_img, 'JPEG', 0, 0);
                     pdf.addPage();
-                    pdf.addImage(envelop_imge, 'PNG', 0, 0);
+                    pdf.addImage(envelop_imge, 'JPEG', 0, 0);
 
                     topic = $("select#topic option:selected").text();
                     pdf.save('公投連署書 - ' + topic + '（請雙面列印）.pdf');
