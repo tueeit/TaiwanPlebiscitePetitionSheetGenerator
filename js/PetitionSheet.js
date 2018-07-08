@@ -145,6 +145,11 @@ function handle_village_change() {
     }
 }
 
+function handle_year_change() {
+    year = $(this).val();
+    $("span#year").text(year-1911);
+}
+
 function set_element_style(element, valid) {
     if (valid) {
         element.css("border-style", "");
@@ -355,7 +360,6 @@ function form_data_change() {
 
 function create_data_binding() {
     copy_input_to_span("id")
-    copy_input_to_span("year")
     copy_input_to_span("month")
     copy_input_to_span("date")
     copy_input_to_span("neighbor")
@@ -370,6 +374,7 @@ function create_data_binding() {
     $("select#district").change(handle_district_change)
     $("input#village").keyup(handle_village_change)
     $("input#road").keyup(handle_road_change)
+    $("input#year").keyup(handle_year_change)
 
     $("select#topic").change(function() {
         change_topic($(this).val());
